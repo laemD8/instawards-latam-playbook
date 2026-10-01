@@ -1,0 +1,1089 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instawards LATAM Playbook</title>
+<meta name="description" content="Internal operating playbook for the Instawards LATAM program: monthly cycle, owners, timeline, calendar and workload.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Lora:ital,wght@0,400;0,500;1,500;1,600&amp;display=swap">
+<style>
+body{margin:0;background:#0F0F0F}
+a{color:#FDDA24}a:hover{color:#F6F7F8}
+.pg{font-family:Inter,system-ui,sans-serif;font-size:15.5px;line-height:1.55;color:#F6F7F8;background:#0F0F0F}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.serif{font-family:Lora,Georgia,serif}
+.muted{color:rgba(246,247,248,.72)}
+.kick{font-family:Lora,Georgia,serif;font-style:italic;font-weight:500;color:#B7ACE8;font-size:15px;margin:0 0 8px}
+.sec{border-top:1px solid rgba(246,247,248,.13);padding:56px 0}
+.h2{font-family:Lora,Georgia,serif;font-weight:400;font-size:36px;line-height:1.15;margin:0 0 12px}
+.h3{font-family:Lora,Georgia,serif;font-weight:500;font-size:19px;line-height:1.3;margin:0 0 8px}
+.cap{font-size:12.5px;color:rgba(246,247,248,.72)}
+.tag{display:inline-block;font-size:12px;line-height:1.4;padding:2px 8px;border:1px solid rgba(246,247,248,.35);color:#F6F7F8;margin:0 6px 6px 0}
+.tag-y{background:#FDDA24;border-color:#FDDA24;color:#0F0F0F;font-weight:600}
+.tag-l{border-color:#B7ACE8;color:#B7ACE8}
+.tag-s{border:1px dashed #D6D2C4;color:#D6D2C4}
+.cell{border-top:1px solid rgba(246,247,248,.13);padding:18px 0}
+ul.l{margin:0;padding-left:18px}ul.l li{margin:3px 0}
+.tbl{width:100%;border-collapse:collapse;font-size:14.5px}
+.tbl th{text-align:left;font-weight:500;font-size:12.5px;color:rgba(246,247,248,.72);padding:10px 12px 10px 0;border-bottom:1px solid rgba(246,247,248,.3)}
+.tbl td{padding:12px 12px 12px 0;border-bottom:1px solid rgba(246,247,248,.13);vertical-align:top}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+details{border-top:1px solid rgba(246,247,248,.13)}
+details:last-of-type{border-bottom:1px solid rgba(246,247,248,.13)}
+summary{cursor:pointer;list-style:none;padding:16px 0;font-family:Lora,Georgia,serif;font-weight:500;font-size:18px;display:flex;justify-content:space-between;gap:16px;min-height:44px;box-sizing:border-box;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:Inter,sans-serif;color:#FDDA24;font-size:22px}
+details[open] summary::after{content:"\2212"}
+.dbody{padding:0 0 22px}
+.btn{min-height:44px;min-width:44px;padding:0 14px;background:transparent;border:1px solid rgba(246,247,248,.35);color:#F6F7F8;font-size:14px;cursor:pointer;font-family:Inter,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn:hover{border-color:#FDDA24;color:#FDDA24}
+.btn-y{background:#FDDA24;border-color:#FDDA24;color:#0F0F0F;font-weight:600}
+.btn-y:hover{color:#0F0F0F;background:#F6F7F8;border-color:#F6F7F8}
+button:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid #FDDA24;outline-offset:2px}
+.avw{display:inline-block;flex:none;border-radius:50%;overflow:hidden;line-height:0;vertical-align:middle}
+.avw svg{display:block}
+.av{width:26px;height:26px}
+.av-sm{width:20px;height:20px}
+.av-lg{width:72px;height:72px}
+.avs{display:inline-flex;gap:3px;align-items:center;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:13px;margin:0 12px 6px 0}
+.viewbar{position:sticky;top:0;z-index:20;background:rgba(15,15,15,.96);border-bottom:1px solid rgba(246,247,248,.13);backdrop-filter:blur(6px)}
+.vb-btn{min-height:44px;padding:0 12px;background:transparent;border:1px solid transparent;color:#F6F7F8;font-family:Inter,sans-serif;font-size:13.5px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;transition:border-color .2s,opacity .2s}
+.vb-btn:hover{border-color:rgba(246,247,248,.35)}
+.tl-row{display:grid;gap:3px 2px;min-height:46px;align-items:stretch;margin-top:4px}
+.tl-item{grid-row:1;display:flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:4px 6px;border:0;font-family:Inter,sans-serif;font-size:12.5px;cursor:pointer;overflow:hidden;transition:opacity .25s,transform .2s;text-align:left}
+.tl-item:hover{transform:translateY(-1px)}
+.tl-wide{justify-content:space-between}
+.lane-label{font-family:Lora,Georgia,serif;font-style:italic;font-size:14px;margin:14px 0 2px}
+.cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2px}
+.cal-cell{min-height:92px;padding:6px;background:rgba(246,247,248,.04);font-size:12px;display:flex;flex-direction:column;gap:4px;box-sizing:border-box}
+.ev{padding:4px 5px;font-size:11.5px;line-height:1.3;display:flex;flex-direction:column;gap:3px}
+.tile{background:transparent;border:1px solid rgba(246,247,248,.13);padding:12px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;color:#F6F7F8;font-family:Lora,Georgia,serif;font-size:16px;transition:border-color .2s,opacity .25s}
+.tile:hover{border-color:rgba(253,218,36,.6)}
+.dotstep{width:28px;height:28px;padding:0;border-radius:50%;cursor:pointer;font-family:Inter,sans-serif;font-size:11px;transition:transform .2s}
+.wbar{height:10px;transition:width .4s ease}
+.pulse{animation:pulse 2.4s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.8)}}
+.halftone{background-image:radial-gradient(circle,#FDDA24 1.3px,transparent 1.6px);background-size:9px 9px;-webkit-mask-image:radial-gradient(circle at 38% 38%,#000 0%,rgba(0,0,0,.55) 38%,transparent 68%);mask-image:radial-gradient(circle at 38% 38%,#000 0%,rgba(0,0,0,.55) 38%,transparent 68%);border-radius:50%}
+@media (max-width:720px){.h2{font-size:28px}.hero-h{font-size:38px !important}.hide-sm{display:none !important}.cal-cell{min-height:70px}}
+@media (prefers-reduced-motion:reduce){.pulse{animation:none}.tl-item,.wbar,.tile{transition:none}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<template id="tpl">
+<div class="pg" style="width: 100%; min-height: 100vh">
+
+<header style="border-bottom: 1px solid #FDDA24">
+<div class="wrap" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding-top: 14px; padding-bottom: 14px">
+<div class="serif" style="font-style: italic; font-weight: 600; font-size: 15px">BAF · Stellar Ambassador Program</div>
+<div class="cap hide-sm">Instawards LATAM Operating Methodology</div>
+<div class="cap">Internal playbook · monthly cycle</div>
+</div>
+</header>
+
+<section>
+<div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: center; padding-top: 56px; padding-bottom: 44px">
+<div>
+<p class="kick">Internal operating playbook</p>
+<h1 class="serif hero-h" style="font-weight: 400; font-size: 54px; line-height: 1.08; margin: 0 0 18px">Instawards LATAM operating methodology</h1>
+<p class="muted" style="font-size: 16.5px; max-width: 560px; margin: 0">Who does what, and when. Pick a person in the bar below and the whole page follows their month: their moments on the timeline, their countries, their calendar blocks and their hours.</p>
+</div>
+<div class="hide-sm" style="display: flex; justify-content: center">
+<div class="halftone" style="width: 300px; height: 300px" aria-hidden="true"></div>
+</div>
+</div>
+<div class="wrap">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); border-top: 1px solid rgba(246,247,248,.13)">
+<div style="padding: 20px 16px 20px 0"><div class="serif" style="font-size: 40px; color: #FDDA24; line-height: 1.1">6</div><div class="cap">countries</div></div>
+<div style="padding: 20px 16px 20px 0"><div class="serif" style="font-size: 40px; color: #FDDA24; line-height: 1.1">3</div><div class="cap">Instawards per country per month</div></div>
+<div style="padding: 20px 16px 20px 0"><div class="serif" style="font-size: 40px; color: #FDDA24; line-height: 1.1">18</div><div class="cap">selected per cohort, at most</div></div>
+<div style="padding: 20px 16px 20px 0"><div class="serif" style="font-size: 40px; color: #FDDA24; line-height: 1.1">30</div><div class="cap">day sprint per Instaward</div></div>
+<div style="padding: 20px 16px 20px 0"><div class="serif" style="font-size: 40px; color: #FDDA24; line-height: 1.1">$5,000</div><div class="cap">maximum per Instaward</div></div>
+</div>
+</div>
+</section>
+
+<nav class="viewbar" aria-label="View as">
+<div class="wrap scroll" style="display: flex; align-items: center; gap: 4px; padding-top: 6px; padding-bottom: 6px">
+<span class="cap" style="white-space: nowrap; margin-right: 6px">View as</span>
+<sc-for list="{{viewBtns}}" as="b" hint-placeholder-count="10">
+<button type="button" class="vb-btn" style="border-color: {{b.bc}}; opacity: {{b.op}}" aria-pressed="{{b.pressed}}" onClick="{{b.pick}}">
+<sc-if value="{{b.hasAv}}" hint-placeholder-val="{{true}}">
+<span class="avw av" aria-hidden="true"><svg viewBox="0 0 48 48" width="100%" height="100%"><rect width="48" height="48" fill="{{b.av.bg}}"></rect><path d="{{b.av.body}}" fill="{{b.av.color}}"></path><path d="{{b.av.dots}}" fill="{{b.av.ink}}"></path><path d="{{b.av.lines}}" fill="none" stroke="{{b.av.ink}}" style="stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"></path></svg></span>
+</sc-if>
+<span>{{b.label}}</span>
+</button>
+</sc-for>
+</div>
+</nav>
+
+<section class="sec" id="people" style="border-top: 0; padding-top: 40px">
+<div class="wrap">
+<sc-if value="{{isAll}}" hint-placeholder-val="{{true}}">
+<p class="kick">The team</p>
+<h2 class="h2">Every person has a character. Follow yours.</h2>
+<p class="muted" style="max-width: 720px; margin: 0 0 20px">Select anyone to see their roles, their moments in the month and their estimated hours.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0 28px">
+<sc-for list="{{legend}}" as="p" hint-placeholder-count="9">
+<button type="button" onClick="{{p.pick}}" style="display: flex; gap: 14px; align-items: center; text-align: left; background: transparent; border: 0; border-top: 1px solid rgba(246,247,248,.13); padding: 14px 0; color: #F6F7F8; cursor: pointer; font-family: Inter, sans-serif">
+<span class="avw av-lg" style="width: 44px; height: 44px" aria-hidden="true"><svg viewBox="0 0 48 48" width="100%" height="100%"><rect width="48" height="48" fill="{{p.av.bg}}"></rect><path d="{{p.av.body}}" fill="{{p.av.color}}"></path><path d="{{p.av.dots}}" fill="{{p.av.ink}}"></path><path d="{{p.av.lines}}" fill="none" stroke="{{p.av.ink}}" style="stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"></path></svg></span>
+<span style="display: flex; flex-direction: column"><span class="serif" style="font-size: 18px; font-weight: 500">{{p.name}}</span><span class="cap">{{p.tagline}}</span></span>
+</button>
+</sc-for>
+</div>
+<p class="cap" style="margin: 16px 0 0">Marketing (Marian on Laura's side, Martín on Daniela's side) is part of the broader team but not a core reviewer in this workflow.</p>
+</sc-if>
+<sc-if value="{{notAll}}" hint-placeholder-val="{{false}}">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; align-items: start">
+<div style="display: flex; gap: 20px; align-items: flex-start">
+<span class="avw av-lg" aria-hidden="true"><svg viewBox="0 0 48 48" width="100%" height="100%"><rect width="48" height="48" fill="{{me.av.bg}}"></rect><path d="{{me.av.body}}" fill="{{me.av.color}}"></path><path d="{{me.av.dots}}" fill="{{me.av.ink}}"></path><path d="{{me.av.lines}}" fill="none" stroke="{{me.av.ink}}" style="stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"></path></svg></span>
+<div>
+<p class="kick" style="margin-bottom: 2px">Viewing as</p>
+<h2 class="h2" style="margin-bottom: 8px">{{me.name}}</h2>
+<div style="margin-bottom: 10px"><sc-for list="{{me.chips}}" as="c" hint-placeholder-count="2"><span class="tag">{{c.t}}</span></sc-for></div>
+<ul class="l" style="font-size: 14.5px"><sc-for list="{{me.roles}}" as="r" hint-placeholder-count="4"><li>{{r.t}}</li></sc-for></ul>
+</div>
+</div>
+<div style="border: 1px solid rgba(246,247,248,.13); padding: 22px">
+<div class="cap">Estimated this month</div>
+<div class="serif" style="font-size: 46px; color: #FDDA24; line-height: 1.1; margin: 4px 0 12px">{{me.hoursText}}</div>
+<div class="cap" style="margin-bottom: 8px">Your moments in {{monthName}}</div>
+<sc-for list="{{me.moments}}" as="m" hint-placeholder-count="4">
+<a href="#timeline" onClick="{{m.pick}}" style="display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: 1px solid rgba(246,247,248,.13); text-decoration: none; color: #F6F7F8; min-height: 28px">
+<span>{{m.label}}</span><span class="cap">{{m.when}}</span>
+</a>
+</sc-for>
+<button type="button" class="btn" style="margin-top: 14px" onClick="{{clearViewer}}">Back to everyone</button>
+</div>
+</div>
+</sc-if>
+</div>
+</section>
+
+<section class="sec" style="padding-top: 0; border-top: 0">
+<div class="wrap">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); border: 1px solid rgba(246,247,248,.13)">
+<div style="padding: 22px; background: #FDDA24; color: #0F0F0F">
+<div style="font-size: 12.5px; font-weight: 600">Fixed calendar deadline</div>
+<div class="serif" style="font-size: 42px; line-height: 1.1; margin: 6px 0">The 7th</div>
+<div style="font-size: 14px">Applications close on the 7th of every month. It does not move for weekends or holidays. Review starts the next business day.</div>
+</div>
+<div style="padding: 22px; border-left: 1px solid rgba(246,247,248,.13)">
+<div class="cap">System of record</div>
+<div class="serif" style="font-size: 28px; line-height: 1.15; margin: 6px 0">Stellar Apex</div>
+<div class="muted" style="font-size: 14px">If it is not in Apex, it is not recorded. Telegram is communication only.</div>
+</div>
+<div style="padding: 22px; border-left: 1px solid rgba(246,247,248,.13)">
+<div class="cap">SLA is not allocated time</div>
+<div class="serif" style="font-size: 28px; line-height: 1.15; margin: 6px 0">Hours scale with volume</div>
+<div class="muted" style="font-size: 14px">Two business days is a deadline, not two full workdays.</div>
+</div>
+<div style="padding: 22px; border-left: 1px solid rgba(246,247,248,.13)">
+<div class="cap">Human review is mandatory</div>
+<div class="serif" style="font-size: 28px; line-height: 1.15; margin: 6px 0">AI supports, people decide</div>
+<div class="muted" style="font-size: 14px">AI can summarize, compare, organize and flag gaps. Reviewers own the judgment.</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="timeline">
+<div class="wrap">
+<p class="kick">The month at a glance</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 8px">
+<h2 class="h2" style="margin: 0">Two cycles, one month</h2>
+<div style="display: flex; align-items: center; gap: 8px">
+<button type="button" class="btn" aria-label="Previous month" onClick="{{prevMonth}}">‹</button>
+<div class="serif" style="font-size: 20px; min-width: 150px; text-align: center">{{monthName}}</div>
+<button type="button" class="btn" aria-label="Next month" onClick="{{nextMonth}}">›</button>
+</div>
+</div>
+<p style="margin: 0 0 20px"><span class="tag tag-y" style="margin-bottom: 0">{{todayTag}}</span> <span class="muted">{{nowText}}</span></p>
+<div class="scroll">
+<div style="min-width: 980px">
+<div class="tl-row" style="grid-template-columns: repeat({{days}}, minmax(0, 1fr)); min-height: 0">
+<sc-for list="{{weekBands}}" as="w" hint-placeholder-count="4">
+<div class="cap" style="grid-row: 1; grid-column: {{w.col}}; border-bottom: 1px solid rgba(246,247,248,.3); padding: 4px 6px">{{w.label}}</div>
+</sc-for>
+</div>
+<div class="tl-row" style="grid-template-columns: repeat({{days}}, minmax(0, 1fr)); min-height: 0">
+<sc-for list="{{dayHeads}}" as="d" hint-placeholder-count="30">
+<div style="grid-row: 1; text-align: center; font-size: 11px; line-height: 1.25; padding: 4px 0; background: {{d.bg}}; color: {{d.fg}}; font-weight: {{d.fw}}"><div>{{d.wd}}</div><div>{{d.n}}</div></div>
+</sc-for>
+</div>
+<div class="lane-label" style="color: #FDDA24">Selection · next cohort</div>
+<div class="tl-row" style="grid-template-columns: repeat({{days}}, minmax(0, 1fr))">
+<sc-for list="{{selA}}" as="m" hint-placeholder-count="3">
+<button type="button" class="tl-item tl-wide" style="grid-column: {{m.col}}; opacity: {{m.op}}; background: {{m.bg}}; color: {{m.fg}}; border-top: {{m.bt}}; outline: {{m.ol}}; outline-offset: -2px" aria-label="{{m.aria}}" onClick="{{m.pick}}">
+<span style="font-weight: 500">{{m.text}}</span>
+<span class="avs"><sc-for list="{{m.av}}" as="p" hint-placeholder-count="2"><span class="avw av-sm" aria-hidden="true"><svg viewBox="0 0 48 48" width="100%" height="100%"><rect width="48" height="48" fill="{{p.bg}}"></rect><path d="{{p.body}}" fill="{{p.color}}"></path><path d="{{p.dots}}" fill="{{p.ink}}"></path><path d="{{p.lines}}" fill="none" stroke="{{p.ink}}" style="stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"></path></svg></span></sc-for></span>
+</button>
+</sc-for>
+</div>
+<div class="tl-row" style="grid-template-columns: repeat({{days}}, minmax(0, 1fr))">
+<sc-for list="{{selB}}" as="m" hint-placeholder-count="6">
+<button type="button" class="tl-item" style="grid-column: {{m.col}}; opacity: {{m.op}}; background: {{m.bg}}; color: {{m.fg}}; border-top: {{m.bt}}; outline: {{m.ol}}; outline-offset: -2px; padding: 0; font-weight: 600; font-size: 14px" aria-label="{{m.aria}}" onClick="{{m.pick}}">{{m.text}}</button>
+</sc-for>
+</div>
+<div class="lane-label" style="color: #B7ACE8">Monitoring · active cohort, 30-day sprint</div>
+<div class="tl-row" style="grid-template-columns: repeat({{days}}, minmax(0, 1fr))">
+<sc-for list="{{monA}}" as="m" hint-placeholder-count="4">
+<button type="button" class="tl-item tl-wide" style="grid-column: {{m.col}}; opacity: {{m.op}}; background: {{m.bg}}; color: {{m.fg}}; border-top: {{m.bt}}; outline: {{m.ol}}; outline-offset: -2px" aria-label="{{m.aria}}" onClick="{{m.pick}}">
+<span style="font-weight: 500">{{m.text}}</span>
+<span class="avs"><sc-for list="{{m.av}}" as="p" hint-placeholder-count="2"><span class="avw av-sm" aria-hidden="true"><svg viewBox="0 0 48 48" width="100%" height="100%"><rect width="48" height="48" fill="{{p.bg}}"></rect><path d="{{p.body}}" fill="{{p.color}}"></path><path d="{{p.dots}}" fill="{{p.ink}}"></path><path d="{{p.lines}}" fill="none" stroke="{{p.ink}}" style="stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"></path></svg></span></sc-for></span>
+</button>
+</sc-for>
+</div>
+<div class="tl-row" style="grid-template-columns: repeat({{days}}, minmax(0, 1fr))">
+<sc-for list="{{monB}}" as="m" hint-placeholder-count="2">
+<button type="button" class="tl-item tl-wide" style="grid-column: {{m.col}}; opacity: {{m.op}}; background: {{m.bg}}; color: {{m.fg}}; border-top: {{m.bt}}; outline: {{m.ol}}; outline-offset: -2px" aria-label="{{m.aria}}" onClick="{{m.pick}}">
+<span style="font-weight: 500">{{m.text}}</span>
+<span class="avs"><sc-for list="{{m.av}}" as="p" hint-placeholder-count="6"><span class="avw av-sm" aria-hidden="true"><svg viewBox="0 0 48 48" width="100%" height="100%"><rect width="48" height="48" fill="{{p.bg}}"></rect><path d="{{p.body}}" fill="{{p.color}}"></path><path d="{{p.dots}}" fill="{{p.ink}}"></path><path d="{{p.lines}}" fill="none" stroke="{{p.ink}}" style="stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"></path></svg></span></sc-for></span>
+</button>
+</sc-for>
+</div>
+</div>
+</div>
+<p class="cap" style="margin: 10px 0 0">Business days 1 to 5 shown as 1–5 after the 7th. Holidays are not included. Reviews happen twice per month, Week 2 and Week 4. Tap any block for details.</p>
+
+<div style="margin-top: 22px; border: 1px solid rgba(246,247,248,.13); padding: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px">
+<div>
+<span class="tag" style="border-color: {{detail.color}}; color: {{detail.color}}">{{detail.lane}}</span>
+<div class="serif" style="font-size: 28px; line-height: 1.15; margin: 6px 0 4px">{{detail.label}}</div>
+<div class="cap" style="margin-bottom: 14px">{{detail.when}}</div>
+<div>
+<sc-for list="{{detail.people}}" as="p" hint-placeholder-count="3">
+<span class="chip"><span class="avw av" aria-hidden="true"><svg viewBox="0 0 48 48" width="100%" height="100%"><rect width="48" height="48" fill="{{p.bg}}"></rect><path d="{{p.body}}" fill="{{p.color}}"></path><path d="{{p.dots}}" fill="{{p.ink}}"></path><path d="{{p.lines}}" fill="none" stroke="{{p.ink}}" style="stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"></path></svg></span>{{p.name}}</span>
+</sc-for>
+<sc-for list="{{detail.chips}}" as="c" hint-placeholder-count="1"><span class="tag">{{c.t}}</span></sc-for>
+</div>
+<div class="serif" style="font-size: 20px; color: #FDDA24; margin-top: 10px">{{detail.hours}}</div>
+</div>
+<ul class="l" style="font-size: 14.5px; align-self: center"><sc-for list="{{detail.bul}}" as="x" hint-placeholder-count="3"><li>{{x.t}}</li></sc-for></ul>
+</div>
+</div>
+</section>
+
+<section class="sec" id="journey">
+<div class="wrap">
+<p class="kick">Follow one project</p>
+<h2 class="h2">From application to closeout</h2>
+<p class="muted" style="max-width: 720px; margin: 0 0 24px">One Instaward, step by step. Press play or move through the steps to see who acts at each moment.</p>
+<div class="scroll">
+<div style="display: flex; align-items: center; gap: 6px; min-width: 560px; padding: 4px 2px">
+<sc-for list="{{jDots}}" as="j" hint-placeholder-count="15">
+<button type="button" class="dotstep" style="background: {{j.bg}}; color: {{j.fg}}; border: {{j.bd}}; transform: scale({{j.sc}})" aria-label="{{j.aria}}" onClick="{{j.pick}}">{{j.n}}</button>
+<sc-if value="{{j.line}}" hint-placeholder-val="{{true}}"><span style="flex: 1; height: 1px; background: {{j.lc}}; min-width: 6px"></span></sc-if>
+</sc-for>
+</div>
+</div>
+<div style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; border-top: 2px solid {{jCur.color}}; padding-top: 22px">
+<div>
+<div class="cap">Step {{jCur.n}} of {{jTotal}} · {{jCur.phase}}</div>
+<div class="serif" style="font-size: 30px; line-height: 1.15; margin: 6px 0 10px">{{jCur.title}}</div>
+<p class="muted" style="margin: 0; font-size: 15px">{{jCur.text}}</p>
+</div>
+<div>
+<div class="cap" style="margin-bottom: 8px">Who acts</div>
+<div><sc-for list="{{jCur.people}}" as="p" hint-placeholder-count="2"><span class="chip"><span class="avw av" aria-hidden="true"><svg viewBox="0 0 48 48" width="100%" height="100%"><rect width="48" height="48" fill="{{p.bg}}"></rect><path d="{{p.body}}" fill="{{p.color}}"></path><path d="{{p.dots}}" fill="{{p.ink}}"></path><path d="{{p.lines}}" fill="none" stroke="{{p.ink}}" style="stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"></path></svg></span>{{p.name}}</span></sc-for><sc-for list="{{jCur.chips}}" as="c" hint-placeholder-count="1"><span class="tag">{{c.t}}</span></sc-for></div>
+<div style="display: flex; gap: 8px; margin-top: 18px; flex-wrap: wrap">
+<button type="button" class="btn" onClick="{{jBack}}" aria-label="Previous step">‹ Back</button>
+<button type="button" class="btn btn-y" onClick="{{jPlay}}">{{jPlayLabel}}</button>
+<button type="button" class="btn" onClick="{{jNext}}" aria-label="Next step">Next ›</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="review">
+<div class="wrap">
+<p class="kick">Application review workflow</p>
+<h2 class="h2">From the 7th to a final decision in five business days</h2>
+<p class="muted" style="max-width: 720px; margin: 0 0 28px">Daniela (product and business) and Gerardo (technical) assess every eligible application independently before they meet. In {{monthName}}: business days 1–5 are {{bdRange}}.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0 28px; opacity: {{dgOp}}">
+<div class="cell">
+<span class="tag tag-y">BD 1–2 · {{bd12}}</span>
+<div class="h3" style="margin-top: 6px">Asynchronous review</div>
+<ul class="l" style="font-size: 14.5px">
+<li>Full application and SOW</li>
+<li>Standardized rubric</li>
+<li>Feasibility within 30 days</li>
+<li>Scope, deliverables, planned evidence</li>
+<li>Written feedback, missing information</li>
+<li><strong>Top 5 per country</strong> from each reviewer</li>
+</ul>
+</div>
+<div class="cell">
+<span class="tag">BD 3 · {{bd3}} · up to 3 h</span>
+<div class="h3" style="margin-top: 6px">Consensus meeting</div>
+<p style="font-size: 14.5px; margin: 0 0 8px">Each reviewer brings Top 5, rubric scores, strengths, risks and open questions. About 30 minutes per country.</p>
+<p style="font-size: 14.5px; margin: 0">Outcome: <strong style="color: #FDDA24">3 selected projects per country</strong>.</p>
+</div>
+<div class="cell">
+<span class="tag tag-s">BD 4 · {{bd4}} · 1 h hold</span>
+<div class="h3" style="margin-top: 6px">Contingency</div>
+<p style="font-size: 14.5px; margin: 0 0 8px">Only if consensus was not reached, more information is needed, a project needs a second review, or a scoring gap remains.</p>
+<p class="cap" style="margin: 0">Release the block if it is not needed.</p>
+</div>
+<div class="cell">
+<span class="tag tag-y">BD 5 · {{bd5}} · deadline</span>
+<div class="h3" style="margin-top: 6px">Decision in Apex</div>
+<ul class="l" style="font-size: 14.5px">
+<li><strong>Accepted:</strong> moved to the stage visible to Shaun / Stellar</li>
+<li><strong>Rejected:</strong> feedback through the rubric / platform</li>
+<li><strong>Additional information required:</strong> only if the process explicitly allows it before final closure</li>
+</ul>
+</div>
+</div>
+<div style="margin-top: 36px">
+<div class="h3">Upcoming rounds</div>
+<p class="cap" style="margin: 0 0 14px">Exact dates for the next four cohorts. Tap a month to load it in the timeline and calendar. Holidays are not included.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
+<sc-for list="{{rounds}}" as="r" hint-placeholder-count="4">
+<button type="button" onClick="{{r.pick}}" aria-pressed="{{r.pressed}}" style="text-align: left; background: {{r.bg}}; border: 1px solid {{r.bc}}; padding: 18px; color: #F6F7F8; cursor: pointer; font-family: Inter, sans-serif; display: flex; flex-direction: column">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px"><span class="serif" style="font-size: 22px">{{r.month}}</span><span class="cap">{{r.tag}}</span></div>
+<div style="background: #FDDA24; color: #0F0F0F; font-weight: 600; font-size: 13px; padding: 6px 8px; margin: 10px 0 6px">Applications close · {{r.close}}</div>
+<sc-for list="{{r.rows}}" as="x" hint-placeholder-count="8">
+<div style="display: flex; justify-content: space-between; gap: 10px; font-size: 13px; padding: 6px 0; border-top: 1px solid rgba(246,247,248,.13)"><span class="cap">{{x.k}}</span><span style="text-align: right; color: {{x.c}}">{{x.v}}</span></div>
+</sc-for>
+</button>
+</sc-for>
+</div>
+</div>
+<div style="margin-top: 28px">
+<details>
+<summary>What reviewers look at: first Instaward vs follow-on</summary>
+<div class="dbody" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px">
+<div>
+<div class="h3">First Instaward</div>
+<p class="cap" style="margin: 0 0 8px">The team is applying for the first time.</p>
+<ul class="l" style="font-size: 14.5px"><li>Project clarity</li><li>Scope</li><li>Feasibility</li><li>Deliverables</li><li>Evidence plan</li><li>Technical and product relevance</li></ul>
+</div>
+<div>
+<div class="h3">Follow-on Instaward</div>
+<p class="cap" style="margin: 0 0 8px">The project already completed a previous Instaward. Review also includes:</p>
+<ul class="l" style="font-size: 14.5px"><li>Previous commitments</li><li>Completion history</li><li>Evidence from the prior sprint</li><li>Quality of execution</li><li>Responsiveness to previous feedback</li><li>Justification for continued funding</li></ul>
+</div>
+</div>
+</details>
+<details>
+<summary>Rubric ownership and feedback</summary>
+<div class="dbody">
+<p style="margin: 0 0 8px"><strong>Adriana</strong> prepares and maintains the review rubric. It must include a dedicated feedback field.</p>
+<p class="muted" style="margin: 0">Every reviewed team should receive useful feedback, including teams that are not selected, so they can improve a future application.</p>
+</div>
+</details>
+</div>
+</div>
+</section>
+
+<section class="sec" id="capacity">
+<div class="wrap">
+<p class="kick">Application review capacity</p>
+<h2 class="h2">Review hours follow real volume</h2>
+<p class="muted" style="max-width: 720px; margin: 0 0 28px">30 minutes per first Instaward and 40 minutes per follow-on, per reviewer. These counts also feed the calendar and workload below.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: start">
+<div style="border: 1px solid rgba(246,247,248,.13); padding: 24px">
+<div class="cap" style="margin-bottom: 14px">Review hours per reviewer = First × 0.5 h + Follow-ons × 0.67 h</div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 0; border-top: 1px solid rgba(246,247,248,.13)">
+<div><div style="font-weight: 500">First Instawards</div><div class="cap">30 min each</div></div>
+<div style="display: flex; align-items: center; gap: 10px">
+<button type="button" class="btn" style="padding: 0" aria-label="Fewer first Instawards" onClick="{{decFirst}}">−</button>
+<div class="serif" style="font-size: 26px; min-width: 44px; text-align: center">{{first}}</div>
+<button type="button" class="btn" style="padding: 0" aria-label="More first Instawards" onClick="{{incFirst}}">+</button>
+</div>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 0; border-top: 1px solid rgba(246,247,248,.13)">
+<div><div style="font-weight: 500">Follow-on Instawards</div><div class="cap">40 min each</div></div>
+<div style="display: flex; align-items: center; gap: 10px">
+<button type="button" class="btn" style="padding: 0" aria-label="Fewer follow-on Instawards" onClick="{{decFollow}}">−</button>
+<div class="serif" style="font-size: 26px; min-width: 44px; text-align: center">{{follow}}</div>
+<button type="button" class="btn" style="padding: 0" aria-label="More follow-on Instawards" onClick="{{incFollow}}">+</button>
+</div>
+</div>
+<div style="border-top: 1px solid rgba(246,247,248,.3); padding-top: 16px; margin-top: 4px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px">
+<div class="cap">{{totalApps}} eligible applications</div>
+<div><span class="serif" style="font-size: 44px; color: #FDDA24">{{appH}}</span><span class="cap"> h per reviewer</span></div>
+</div>
+<p class="cap" style="margin: 10px 0 0">To be completed within business days 1–2, not spread across them.</p>
+</div>
+<div>
+<table class="tbl">
+<thead><tr><th>Eligible applications</th><th class="num">Approx. review time per reviewer</th></tr></thead>
+<tbody>
+<tr><td>6</td><td class="num">3 h</td></tr>
+<tr><td>12</td><td class="num">6 h</td></tr>
+<tr><td>18</td><td class="num">9 h</td></tr>
+<tr><td>24</td><td class="num">12 h</td></tr>
+<tr><td>30</td><td class="num">15 h</td></tr>
+</tbody>
+</table>
+<p class="cap" style="margin: 10px 0 0">Example figures assume first Instawards only.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="countries">
+<div class="wrap">
+<p class="kick">Country coverage</p>
+<h2 class="h2">Six countries, one owner map</h2>
+<p class="muted" style="max-width: 720px; margin: 0 0 24px">Tap a country to see who owns it at each level.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; align-items: start">
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+<sc-for list="{{countries}}" as="c" hint-placeholder-count="6">
+<button type="button" class="tile" style="border-color: {{c.bc}}; opacity: {{c.op}}" aria-pressed="{{c.pressed}}" onClick="{{c.pick}}">
+<svg viewBox="-4 -4 108 108" width="100%" style="max-width: 120px; aspect-ratio: 1" aria-hidden="true">
+<defs><pattern id="{{c.pid}}" width="3.2" height="3.2" patternUnits="userSpaceOnUse"><circle cx="1.6" cy="1.6" r="0.95" fill="{{c.dot}}"></circle></pattern></defs>
+<path d="{{c.d}}" fill="{{c.fillUrl}}" stroke="{{c.stroke}}" style="stroke-width: 0.6"></path>
+<circle cx="{{c.hx}}" cy="{{c.hy}}" r="2.6" fill="#F6F7F8"></circle>
+<circle class="pulse" cx="{{c.hx}}" cy="{{c.hy}}" r="3.4" fill="none" stroke="#F6F7F8" style="stroke-width: 1; opacity: {{c.pulseOp}}"></circle>
+</svg>
+<span>{{c.name}}</span>
+<span class="avs"><sc-for list="{{c.av}}" as="p" hint-placeholder-count="3"><span class="avw av-sm" aria-hidden="true"><svg viewBox="0 0 48 48" width="100%" height="100%"><rect width="48" height="48" fill="{{p.bg}}"></rect><path d="{{p.body}}" fill="{{p.color}}"></path><path d="{{p.dots}}" fill="{{p.ink}}"></path><path d="{{p.lines}}" fill="none" stroke="{{p.ink}}" style="stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"></path></svg></span></sc-for></span>
+</button>
+</sc-for>
+</div>
+<div style="border-top: 2px solid #FDDA24; padding-top: 18px">
+<div class="cap">{{cSel.hub}}</div>
+<div class="serif" style="font-size: 34px; line-height: 1.1; margin: 4px 0 16px">{{cSel.name}}</div>
+<div class="cell" style="display: flex; justify-content: space-between; gap: 12px; align-items: center"><span class="cap">Chapter Lead</span>
+<span class="chip" style="margin: 0"><sc-for list="{{cSel.leadAv}}" as="p" hint-placeholder-count="1"><span class="avw av" aria-hidden="true"><svg viewBox="0 0 48 48" width="100%" height="100%"><rect width="48" height="48" fill="{{p.bg}}"></rect><path d="{{p.body}}" fill="{{p.color}}"></path><path d="{{p.dots}}" fill="{{p.ink}}"></path><path d="{{p.lines}}" fill="none" stroke="{{p.ink}}" style="stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"></path></svg></span></sc-for><sc-if value="{{cSel.open}}" hint-placeholder-val="{{false}}"><span class="tag tag-y" style="margin: 0">TBD · open</span></sc-if><sc-if value="{{cSel.notOpen}}" hint-placeholder-val="{{true}}"><span>{{cSel.leadName}}</span></sc-if></span></div>
+<div class="cell" style="display: flex; justify-content: space-between; gap: 12px; align-items: center"><span class="cap">Operational assistant</span>
+<span class="chip" style="margin: 0"><span class="avw av" aria-hidden="true"><svg viewBox="0 0 48 48" width="100%" height="100%"><rect width="48" height="48" fill="{{cSel.asst.bg}}"></rect><path d="{{cSel.asst.body}}" fill="{{cSel.asst.color}}"></path><path d="{{cSel.asst.dots}}" fill="{{cSel.asst.ink}}"></path><path d="{{cSel.asst.lines}}" fill="none" stroke="{{cSel.asst.ink}}" style="stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"></path></svg></span>{{cSel.asst.name}}</span></div>
+<div class="cell" style="display: flex; justify-content: space-between; gap: 12px; align-items: center; flex-wrap: wrap"><span class="cap">Review table · {{cSel.table}}</span>
+<span><sc-for list="{{cSel.tbl}}" as="p" hint-placeholder-count="2"><span class="chip" style="margin: 0 0 0 12px"><span class="avw av" aria-hidden="true"><svg viewBox="0 0 48 48" width="100%" height="100%"><rect width="48" height="48" fill="{{p.bg}}"></rect><path d="{{p.body}}" fill="{{p.color}}"></path><path d="{{p.dots}}" fill="{{p.ink}}"></path><path d="{{p.lines}}" fill="none" stroke="{{p.ink}}" style="stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"></path></svg></span>{{p.name}}</span></sc-for></span></div>
+<sc-if value="{{cSel.hasNote}}" hint-placeholder-val="{{false}}"><p class="cap" style="margin: 12px 0 0">{{cSel.note}}</p></sc-if>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="monitoring">
+<div class="wrap">
+<p class="kick">Active project monitoring</p>
+<h2 class="h2">Validate execution against the approved scope</h2>
+<p class="muted" style="max-width: 760px; margin: 0 0 24px">Every review compares <span style="color: #F6F7F8">SOW commitment → Planned work → Expected output → Evidence → Status</span>. Reviews validate execution, they do not ask for generic progress updates.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0 28px">
+<div class="cell">
+<span class="tag tag-l">Every week</span>
+<div class="h3" style="margin-top: 6px">Weekly Apex compliance check</div>
+<p class="cap" style="margin: 0 0 8px">Nicolle: CO / MX / CR · Adriana: AR / BO / PE</p>
+<ul class="l" style="font-size: 14.5px"><li>Weekly update was submitted</li><li>Required evidence is attached</li><li>Links work</li><li>Deliverable status is clear</li><li>Blockers are documented</li><li>Missing information is followed up</li></ul>
+</div>
+<div class="cell">
+<span class="tag tag-l">Week 2</span>
+<div class="h3" style="margin-top: 6px">Review 1: Mid-Sprint Review</div>
+<ul class="l" style="font-size: 14.5px"><li>Commitments vs actual progress</li><li>Weeks 1–2 outputs and evidence</li><li>Delays, blockers, scope deviation</li><li>Feedback and corrective actions for the second half</li></ul>
+</div>
+<div class="cell">
+<span class="tag tag-l">Week 4</span>
+<div class="h3" style="margin-top: 6px">Review 2: Final Review</div>
+<ul class="l" style="font-size: 14.5px"><li>Final execution vs approved SOW</li><li>Deliverables and final evidence validated</li><li>Sprint completion decided, feedback documented</li><li>BAF-side closeout, ready to report back to Stellar</li><li>Execution history kept for any follow-on</li></ul>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 32px">
+<div>
+<div class="h3">Review framework, per project</div>
+<ol style="font-size: 14.5px; margin: 0; padding-left: 22px"><li>Approved SOW</li><li>Planned work</li><li>Expected output</li><li>Evidence submitted</li><li>Status</li><li>Blockers</li><li>Reviewer feedback</li><li>Action items</li></ol>
+</div>
+<div>
+<div class="h3">Evidence status, per deliverable</div>
+<div style="margin: 8px 0 10px"><span class="tag tag-y">Evidence present</span><span class="tag tag-l">Evidence partial</span><span class="tag tag-s">Evidence missing</span></div>
+<p class="cap" style="margin: 0 0 12px">Comments must explain any partial or missing evidence.</p>
+<p class="cap" style="margin: 0">Evidence can be repository links, demos, screenshots, documents, transaction hashes or other verifiable project artifacts.</p>
+</div>
+</div>
+<div style="margin-top: 36px">
+<div class="h3">Review tables · {{perTable}} active projects each</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0 28px">
+<sc-for list="{{tables}}" as="t" hint-placeholder-count="3">
+<div class="cell" style="opacity: {{t.op}}"><div class="serif" style="font-size: 22px">{{t.name}}</div>
+<div style="margin-top: 6px"><sc-for list="{{t.av}}" as="p" hint-placeholder-count="2"><span class="chip"><span class="avw av" aria-hidden="true"><svg viewBox="0 0 48 48" width="100%" height="100%"><rect width="48" height="48" fill="{{p.bg}}"></rect><path d="{{p.body}}" fill="{{p.color}}"></path><path d="{{p.dots}}" fill="{{p.ink}}"></path><path d="{{p.lines}}" fill="none" stroke="{{p.ink}}" style="stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"></path></svg></span>{{p.name}}</span></sc-for></div></div>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="calendar">
+<div class="wrap">
+<p class="kick">Calendar exercise</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 8px">
+<h2 class="h2" style="margin: 0">{{calTitle}}</h2>
+<div style="display: flex; align-items: center; gap: 8px">
+<button type="button" class="btn" aria-label="Previous month" onClick="{{prevMonth}}">‹</button>
+<div class="serif" style="font-size: 20px; min-width: 150px; text-align: center">{{monthName}}</div>
+<button type="button" class="btn" aria-label="Next month" onClick="{{nextMonth}}">›</button>
+</div>
+</div>
+<p class="muted" style="margin: 0 0 20px">{{calSub}}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start">
+<div style="flex: 3 1 560px; min-width: 0" class="scroll">
+<div style="min-width: 620px">
+<div class="cal" style="margin-bottom: 2px"><div class="cap" style="padding: 4px 6px">Mon</div><div class="cap" style="padding: 4px 6px">Tue</div><div class="cap" style="padding: 4px 6px">Wed</div><div class="cap" style="padding: 4px 6px">Thu</div><div class="cap" style="padding: 4px 6px">Fri</div><div class="cap" style="padding: 4px 6px">Sat</div><div class="cap" style="padding: 4px 6px">Sun</div></div>
+<div class="cal">
+<sc-for list="{{calCells}}" as="c" hint-placeholder-count="35">
+<div class="cal-cell" style="background: {{c.bg}}; border-top: {{c.bt}}; opacity: {{c.op}}">
+<div style="font-weight: {{c.fw}}; color: {{c.nc}}">{{c.n}}</div>
+<sc-for list="{{c.ev}}" as="e" hint-placeholder-count="1">
+<div class="ev" style="background: {{e.bg}}; color: {{e.fg}}; border: {{e.bd}}">
+<span style="font-weight: 600">{{e.label}}</span>
+<span>{{e.hours}}</span>
+<span class="avs"><sc-for list="{{e.av}}" as="p" hint-placeholder-count="2"><span class="avw av-sm" aria-hidden="true"><svg viewBox="0 0 48 48" width="100%" height="100%"><rect width="48" height="48" fill="{{p.bg}}"></rect><path d="{{p.body}}" fill="{{p.color}}"></path><path d="{{p.dots}}" fill="{{p.ink}}"></path><path d="{{p.lines}}" fill="none" stroke="{{p.ink}}" style="stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"></path></svg></span></sc-for></span>
+</div>
+</sc-for>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+<div style="flex: 1 1 260px">
+<div style="border: 1px solid rgba(246,247,248,.13); padding: 20px">
+<sc-if value="{{notAll}}" hint-placeholder-val="{{false}}">
+<div class="cap">Blocks to reserve in {{monthName}}</div>
+<div class="serif" style="font-size: 42px; color: #FDDA24; line-height: 1.1; margin: 4px 0 14px">{{calTotal}}</div>
+</sc-if>
+<div class="h3">Week-level blocks</div>
+<p class="cap" style="margin: 0 0 8px">The methodology sets the week, not the day. Place these where they fit.</p>
+<sc-for list="{{flex}}" as="f" hint-placeholder-count="5">
+<div style="border-top: 1px solid rgba(246,247,248,.13); padding: 10px 0">
+<div style="display: flex; justify-content: space-between; gap: 10px"><span class="cap">{{f.week}}</span><span class="cap" style="color: #FDDA24">{{f.hours}}</span></div>
+<div style="font-size: 14px; font-weight: 500; margin: 2px 0 4px">{{f.label}}</div>
+<span class="avs"><sc-for list="{{f.av}}" as="p" hint-placeholder-count="2"><span class="avw av-sm" aria-hidden="true"><svg viewBox="0 0 48 48" width="100%" height="100%"><rect width="48" height="48" fill="{{p.bg}}"></rect><path d="{{p.body}}" fill="{{p.color}}"></path><path d="{{p.dots}}" fill="{{p.ink}}"></path><path d="{{p.lines}}" fill="none" stroke="{{p.ink}}" style="stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"></path></svg></span></sc-for></span>
+</div>
+</sc-for>
+<sc-if value="{{flexEmpty}}" hint-placeholder-val="{{false}}"><p class="cap" style="margin: 0">No week-level blocks for this person.</p></sc-if>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="workload">
+<div class="wrap">
+<p class="kick">Workload, live</p>
+<h2 class="h2">Hours per person this month</h2>
+<p class="muted" style="max-width: 760px; margin: 0 0 24px">Move the levers to see how hours shift. Application counts come from the review capacity section above. Planning estimates, not guaranteed consumption.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 28px; align-items: center; margin-bottom: 24px">
+<div style="display: flex; align-items: center; gap: 10px">
+<span class="cap">Active Instawards per country</span>
+<button type="button" class="btn" style="padding: 0" aria-label="Fewer active projects" onClick="{{decK}}">−</button>
+<span class="serif" style="font-size: 24px; min-width: 28px; text-align: center">{{k}}</span>
+<button type="button" class="btn" style="padding: 0" aria-label="More active projects" onClick="{{incK}}">+</button>
+</div>
+<div style="display: flex; align-items: center; gap: 0">
+<span class="cap" style="margin-right: 10px">Review model</span>
+<button type="button" class="btn" style="background: {{mBase.bg}}; color: {{mBase.fg}}; border-color: {{mBase.bc}}" aria-pressed="{{mBase.pressed}}" onClick="{{setBase}}">Baseline</button>
+<button type="button" class="btn" style="background: {{mOpt.bg}}; color: {{mOpt.fg}}; border-color: {{mOpt.bc}}" aria-pressed="{{mOpt.pressed}}" onClick="{{setOpt}}">Primary / Secondary</button>
+</div>
+</div>
+<sc-for list="{{bars}}" as="b" hint-placeholder-count="8">
+<div style="display: grid; grid-template-columns: 170px minmax(0, 1fr) 70px; gap: 16px; align-items: center; padding: 10px 0; border-top: 1px solid rgba(246,247,248,.13); opacity: {{b.op}}">
+<div style="display: flex; align-items: center; gap: 10px"><span class="avw av" aria-hidden="true"><svg viewBox="0 0 48 48" width="100%" height="100%"><rect width="48" height="48" fill="{{b.av.bg}}"></rect><path d="{{b.av.body}}" fill="{{b.av.color}}"></path><path d="{{b.av.dots}}" fill="{{b.av.ink}}"></path><path d="{{b.av.lines}}" fill="none" stroke="{{b.av.ink}}" style="stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"></path></svg></span><span>{{b.name}}</span></div>
+<div><div class="wbar" style="width: {{b.w}}%; background: {{b.color}}"></div><div class="cap" style="margin-top: 4px">{{b.note}}</div></div>
+<div class="num serif" style="font-size: 20px">{{b.h}} h</div>
+</div>
+</sc-for>
+<p class="cap" style="margin: 14px 0 0">{{modelNote}} Table reviewers: 2 checkpoints × {{perTable}} projects. Nicolle and Adriana: weekly checks scale with active projects on top of intake, completeness and rubric work. The 1 h contingency hold is not counted. Workload balance also weighs management, stakeholder ownership and decision-making, not headcount alone.</p>
+</div>
+</section>
+
+<section class="sec" id="systems">
+<div class="wrap">
+<p class="kick">Systems and artifacts</p>
+<h2 class="h2">Where things live</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0 28px; margin-top: 12px">
+<div class="cell">
+<span class="tag tag-y">System of record</span>
+<div class="h3" style="margin-top: 6px">Stellar Apex</div>
+<p class="muted" style="font-size: 14.5px; margin: 0">Applications, review status, feedback, selection, progress, evidence, monitoring and stage transitions. If it is not in Apex, it is not recorded.</p>
+</div>
+<div class="cell">
+<span class="tag">Communication only</span>
+<div class="h3" style="margin-top: 6px">Telegram, one group per project</div>
+<p class="muted" style="font-size: 14.5px; margin: 0">Quick questions, coordination, blockers, reminders and meeting logistics. Progress or evidence shared only here does not count as recorded evidence.</p>
+</div>
+<div class="cell">
+<span class="tag">Stellar handoff artifact</span>
+<div class="h3" style="margin-top: 6px">Monthly handoff deck</div>
+<p class="muted" style="font-size: 14.5px; margin: 0">Standardized and organized by country, so Shaun can process the cohort without reconstructing each application.</p>
+</div>
+</div>
+<div style="margin-top: 28px">
+<details>
+<summary>Week 3 handoff: Daniela's checklist and deck structure</summary>
+<div class="dbody" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px">
+<div>
+<div class="h3">Handoff owner: Daniela</div>
+<ul class="l" style="font-size: 14.5px"><li>Confirm selected projects are correctly staged in Apex</li><li>Verify project information is complete</li><li>Notify Shaun on Telegram that the cohort is ready</li><li>Prepare the monthly handoff deck</li><li>Lead the monthly handoff meeting in the third week</li><li>Capture follow-up actions after the meeting</li></ul>
+</div>
+<div>
+<div class="h3">Per project in the deck</div>
+<p style="font-size: 14.5px; margin: 0">Country · Project name · Team · Instaward stage · First or follow-on · What it is building · Problem addressed · 30-day objective · Key deliverables · Requested amount · Why BAF recommends it · Technical notes · Product notes · Previous Instaward performance, when applicable · Risks or considerations · Apex link</p>
+</div>
+</div>
+</details>
+<details>
+<summary>Instaward structure and SOW constraints</summary>
+<div class="dbody" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px">
+<div>
+<div class="h3">Each 30-day scoped engagement defines</div>
+<ul class="l" style="font-size: 14.5px"><li>Problem being addressed</li><li>Objective for the 30-day sprint</li><li>In-scope deliverables and explicit out-of-scope items</li><li>Requested budget</li><li>Weekly execution plan and expected weekly outputs</li><li>Planned evidence of completion</li><li>Next-step alignment after completion</li></ul>
+</div>
+<div>
+<div class="h3">Current constraints</div>
+<table class="tbl">
+<tbody>
+<tr><td>Maximum per Instaward</td><td class="num">$5,000</td></tr>
+<tr><td>Follow-on Instawards</td><td class="num">Two at most</td></tr>
+<tr><td>Cumulative Instawards funding</td><td class="num">$15,000 max</td></tr>
+<tr><td>Scope completion</td><td class="num">30 days or less</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+<details>
+<summary>Fernanda coordination layer</summary>
+<div class="dbody">
+<p class="muted" style="margin: 0 0 12px">Fernanda can act as an additional coordination layer across Chapter Leads outside Mexico, to reduce direct-management load at Co-President level while keeping assistants informed.</p>
+<table class="tbl">
+<thead><tr><th>When Fernanda meets with</th><th>Include</th><th>Data continuity and Apex completeness</th></tr></thead>
+<tbody>
+<tr><td>Eduardo (Peru)</td><td>Adriana</td><td>Adriana</td></tr>
+<tr><td>Emilia (Bolivia)</td><td>Adriana</td><td>Adriana</td></tr>
+<tr><td>Future Costa Rica owner</td><td>Nicolle</td><td>Nicolle</td></tr>
+</tbody>
+</table>
+</div>
+</details>
+<details>
+<summary>Success criteria</summary>
+<div class="dbody">
+<ul class="l" style="font-size: 14.5px; columns: 2 280px; column-gap: 40px">
+<li>Every country has a predictable monthly sourcing rhythm</li><li>Applications always close on the 7th</li><li>Review starts on the next business day</li><li>Daniela and Gerardo complete review within the SLA</li><li>All teams receive documented feedback</li><li>Selected projects are correctly handed off in Apex</li><li>Shaun receives a structured monthly cohort presentation</li><li>Every active project submits weekly updates</li><li>Missing evidence is found before formal reviews</li><li>Mid-sprint reviews identify problems early</li><li>Final reviews rest on evidence, not perception</li><li>Project history is reusable for follow-on decisions</li><li>Workload can be forecast from volume</li><li>No task depends on informal memory</li>
+</ul>
+</div>
+</details>
+</div>
+</div>
+</section>
+
+<section id="open" style="background: #FDDA24; color: #0F0F0F">
+<div class="wrap" style="padding-top: 56px; padding-bottom: 64px">
+<p class="serif" style="font-style: italic; font-weight: 500; font-size: 15px; margin: 0 0 8px">Open decisions</p>
+<h2 class="serif" style="font-weight: 400; font-size: 36px; line-height: 1.15; margin: 0 0 24px">Unresolved on purpose, not filled in</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0 28px">
+<div style="border-top: 1px solid #0F0F0F; padding: 16px 0">
+<div class="serif" style="font-weight: 500; font-size: 19px; margin-bottom: 6px">1. Costa Rica Chapter Lead</div>
+<div style="font-size: 14.5px">Status: TBD. A clear local owner is needed for sourcing, coordination and project follow-up.</div>
+</div>
+<div style="border-top: 1px solid #0F0F0F; padding: 16px 0">
+<div class="serif" style="font-weight: 500; font-size: 19px; margin-bottom: 6px">2. Project review model</div>
+<div style="font-size: 14.5px">Baseline (1 h pre-review + 30 min meeting) or the Primary / Secondary reviewer model. Try both in the workload section.</div>
+</div>
+<div style="border-top: 1px solid #0F0F0F; padding: 16px 0">
+<div class="serif" style="font-weight: 500; font-size: 19px; margin-bottom: 6px">3. Apex status labels</div>
+<div style="font-size: 14.5px">Stages are defined conceptually. Final labels should match the actual Apex implementation.</div>
+</div>
+<div style="border-top: 1px solid #0F0F0F; padding: 16px 0">
+<div class="serif" style="font-weight: 500; font-size: 19px; margin-bottom: 6px">4. Stellar-side steps after handoff</div>
+<div style="font-size: 14.5px">BAF ownership ends after a complete handoff and follow-up. Stellar controls final funding and disbursement.</div>
+</div>
+</div>
+</div>
+</section>
+
+</div>
+</template>
+<script>
+(function () {
+  function DCLogic() {}
+  window.DCLogic = class { constructor() { this.props = {}; } setState(o) { this.state = Object.assign({}, this.state || {}, o); render(); } forceUpdate() { render(); } };
+})();
+var GEO = {"AR":{"d":"M65.7 27.4 L65.0 28.8 L64.9 30.0 L64.6 31.5 L64.7 32.4 L64.3 33.3 L64.4 34.4 L64.0 36.9 L63.2 38.8 L63.7 40.5 L63.6 41.6 L66.8 44.4 L66.6 46.9 L68.1 47.9 L66.2 52.2 L62.1 55.2 L55.8 56.2 L53.4 55.6 L53.7 57.2 L54.0 57.8 L53.4 59.4 L53.4 62.2 L50.0 63.4 L46.8 62.2 L46.2 62.2 L46.4 64.7 L47.2 66.8 L47.5 67.3 L48.9 67.2 L49.3 66.5 L50.1 67.4 L48.9 69.0 L47.7 67.8 L47.4 69.1 L47.9 69.6 L45.8 71.3 L45.7 73.6 L44.9 75.5 L42.9 76.0 L41.3 76.8 L39.6 79.7 L41.8 82.5 L44.5 83.6 L43.2 85.2 L44.3 85.6 L42.2 87.1 L40.0 88.9 L39.0 92.0 L37.3 92.2 L36.8 92.1 L37.2 92.4 L36.6 93.2 L35.6 95.1 L35.4 95.6 L35.8 97.4 L35.1 97.5 L36.8 98.9 L37.0 99.7 L34.1 99.1 L28.9 98.8 L27.8 98.0 L27.3 96.5 L27.3 95.7 L26.9 94.3 L25.6 94.6 L24.9 94.1 L24.2 92.4 L24.1 90.5 L25.3 89.3 L26.4 88.5 L26.6 87.3 L27.1 85.8 L27.2 84.3 L28.2 83.2 L28.2 82.3 L28.9 81.1 L28.4 79.7 L28.8 78.7 L29.4 77.3 L29.2 75.9 L28.2 75.2 L29.8 75.2 L30.2 74.1 L28.6 73.1 L28.9 72.2 L28.6 71.1 L28.8 70.2 L27.7 69.4 L28.0 67.6 L28.0 66.6 L28.8 66.2 L28.5 64.7 L28.3 62.1 L28.7 60.9 L28.6 60.1 L29.0 59.3 L28.9 58.3 L29.4 58.0 L29.6 56.2 L30.5 55.5 L31.0 54.6 L30.5 52.7 L30.3 51.0 L30.3 49.5 L30.5 48.4 L31.3 47.8 L31.9 47.0 L32.4 45.7 L32.1 44.3 L32.3 43.7 L32.7 42.1 L33.2 40.9 L33.7 40.5 L33.8 38.2 L33.4 37.6 L33.2 36.5 L32.9 34.9 L32.4 33.7 L32.5 33.0 L31.9 31.5 L32.2 30.5 L32.5 30.0 L32.9 28.3 L33.6 27.7 L33.5 27.1 L33.3 24.6 L34.0 22.9 L34.7 21.0 L35.5 20.1 L36.1 18.3 L36.9 17.5 L37.7 16.9 L37.0 15.3 L37.5 13.9 L37.2 11.2 L37.5 10.6 L37.1 9.6 L37.8 8.7 L40.2 7.3 L41.1 3.9 L41.2 2.3 L42.1 1.3 L43.1 0.1 L44.2 0.7 L46.3 1.0 L47.4 1.4 L48.2 3.3 L49.1 0.9 L49.8 0.7 L52.1 0.8 L52.6 1.6 L54.4 4.1 L55.5 5.2 L57.3 6.7 L60.5 8.1 L63.3 10.0 L64.3 10.4 L65.8 12.0 L65.3 12.8 L64.8 13.9 L64.3 14.6 L64.2 15.8 L63.8 16.3 L63.4 16.9 L63.1 18.0 L67.3 18.4 L68.6 18.6 L69.5 18.0 L70.7 18.4 L71.2 17.4 L72.2 16.8 L72.7 16.0 L73.5 13.8 L74.1 12.4 L74.8 12.3 L75.5 12.9 L75.9 14.9 L75.9 16.6 L75.0 17.8 L74.3 18.4 L73.4 18.7 L72.8 19.2 L72.4 19.8 L71.3 20.6 L70.8 21.4 L70.2 21.5 L69.9 22.0 L68.9 23.6 L67.9 24.9 L66.5 26.6Z","hx":63.7,"hy":41.9,"hub":"Buenos Aires"},"BO":{"d":"M6.7 59.1 L6.7 58.8 L6.4 57.8 L5.8 57.2 L6.8 56.1 L7.4 55.6 L8.5 54.3 L9.5 53.1 L10.3 52.6 L10.2 51.3 L11.0 50.7 L11.6 50.3 L11.1 49.7 L9.5 49.4 L8.9 48.9 L7.4 45.0 L8.3 43.1 L9.2 41.9 L8.1 40.4 L7.7 39.3 L8.5 38.2 L8.8 37.1 L9.3 36.6 L10.1 35.7 L10.4 34.6 L11.3 34.1 L11.3 33.2 L10.7 32.4 L9.9 30.1 L10.3 29.5 L10.7 27.9 L10.6 24.0 L11.4 23.1 L12.2 22.6 L12.5 21.6 L11.8 19.4 L10.1 16.4 L8.6 13.6 L7.1 11.1 L7.1 9.4 L10.4 9.8 L12.0 10.1 L12.5 10.7 L13.2 10.6 L14.8 9.9 L15.8 9.3 L17.2 7.5 L19.0 7.2 L19.8 7.4 L20.8 6.0 L22.6 4.9 L23.6 4.5 L27.0 2.0 L28.8 1.3 L30.4 0.9 L34.5 0.4 L35.5 0.7 L36.4 0.0 L37.1 0.6 L37.2 1.7 L37.4 3.3 L36.7 5.2 L36.3 6.0 L36.7 7.6 L37.2 10.0 L36.7 11.2 L36.9 12.0 L37.2 12.5 L37.5 13.7 L38.3 14.7 L38.2 15.5 L38.6 15.5 L38.9 15.4 L39.4 16.2 L39.7 17.2 L40.8 17.6 L41.9 18.5 L43.1 19.3 L43.8 20.7 L46.4 21.2 L48.4 20.9 L49.9 21.3 L50.8 22.0 L52.3 22.7 L53.3 22.3 L53.8 23.1 L54.5 23.8 L55.9 24.9 L57.6 25.4 L59.5 26.1 L60.6 26.2 L61.8 28.0 L63.0 29.0 L65.0 29.1 L67.8 28.7 L69.4 29.2 L71.7 30.6 L72.7 31.5 L73.1 32.7 L72.6 33.5 L72.7 34.5 L73.3 35.7 L73.8 37.2 L73.1 40.8 L72.1 41.2 L74.2 43.8 L74.5 47.0 L74.7 49.7 L80.1 50.0 L86.7 50.2 L87.5 50.0 L88.0 49.9 L88.0 50.8 L87.1 52.6 L87.2 54.6 L87.7 57.1 L89.1 58.1 L91.2 59.3 L92.1 59.6 L93.0 62.5 L93.8 64.3 L94.2 64.7 L93.7 65.0 L92.6 68.4 L92.5 69.8 L92.6 70.8 L92.0 71.1 L90.8 73.7 L89.6 76.1 L91.6 77.9 L90.8 78.4 L90.1 78.9 L89.4 79.3 L89.4 76.9 L87.1 75.4 L82.6 72.7 L76.0 72.7 L69.5 74.1 L65.0 75.1 L62.8 76.6 L61.4 79.6 L59.4 82.3 L59.4 86.1 L58.0 91.0 L56.9 94.6 L56.6 94.9 L55.5 93.6 L55.3 93.2 L49.2 93.3 L48.5 93.4 L47.9 93.3 L47.0 93.8 L45.3 97.0 L44.6 99.3 L44.1 99.0 L43.4 96.9 L42.4 95.0 L41.3 94.5 L39.7 94.1 L36.1 94.0 L34.6 94.1 L33.3 93.4 L31.6 92.0 L30.7 91.8 L30.2 92.9 L29.7 94.1 L27.7 94.8 L26.8 95.3 L26.5 96.3 L24.8 97.4 L23.9 99.1 L22.4 99.7 L19.9 100.0 L19.1 99.7 L18.5 99.2 L18.7 98.0 L18.1 95.8 L18.1 94.8 L17.2 93.1 L16.9 91.3 L16.3 89.0 L15.5 86.6 L13.9 85.1 L13.6 84.5 L13.6 83.5 L14.2 82.8 L12.7 81.8 L12.2 81.2 L12.6 80.6 L12.4 79.8 L12.2 78.9 L12.5 78.6 L13.7 77.8 L13.5 77.0 L12.6 76.0 L14.2 73.9 L14.3 73.6 L13.7 73.1 L12.8 72.3 L11.5 71.2 L10.7 70.2 L10.6 69.1 L10.2 67.0 L9.9 65.6 L9.5 64.4 L9.6 63.7 L9.8 63.3 L8.2 62.5 L6.9 60.0Z","hx":16.6,"hy":51.5,"hub":"La Paz"},"PE":{"d":"M77.2 22.9 L76.7 23.5 L75.7 23.3 L74.9 22.4 L73.1 22.5 L72.1 23.2 L70.4 23.8 L68.8 24.2 L66.5 24.6 L64.8 25.7 L62.9 27.1 L61.4 27.7 L61.3 28.7 L61.0 30.6 L59.7 32.7 L59.9 34.0 L60.1 35.1 L59.1 35.7 L56.7 37.5 L56.6 38.7 L57.0 39.7 L56.2 39.9 L55.6 40.1 L55.7 40.8 L55.5 41.2 L56.4 42.0 L57.0 42.6 L56.7 43.1 L57.4 43.9 L57.8 44.8 L58.2 45.6 L58.9 46.1 L59.2 47.1 L60.4 48.3 L60.4 50.4 L61.8 51.2 L64.2 51.7 L64.8 52.7 L65.3 53.9 L66.9 54.4 L70.3 54.2 L71.8 53.1 L72.9 52.1 L73.8 51.5 L73.8 51.9 L73.8 53.2 L73.6 55.4 L73.6 59.0 L74.2 59.6 L75.2 60.2 L76.6 59.8 L78.8 59.6 L80.5 61.7 L82.2 64.7 L84.1 68.1 L83.7 69.1 L82.8 69.8 L82.6 72.9 L82.1 74.3 L82.6 76.1 L83.1 77.2 L82.4 77.7 L81.8 78.8 L81.2 79.5 L80.5 80.6 L80.6 81.9 L81.0 83.5 L80.1 85.2 L81.4 88.2 L82.9 88.6 L83.2 89.1 L82.3 89.8 L82.1 90.9 L81.0 91.9 L80.1 93.1 L78.9 94.0 L79.6 94.8 L79.7 95.4 L78.1 96.3 L78.1 97.6 L77.4 99.2 L75.5 99.9 L74.4 99.6 L71.3 97.4 L69.5 94.9 L67.4 93.7 L65.7 92.7 L63.7 91.1 L59.4 89.3 L56.4 88.0 L52.5 85.6 L48.6 82.7 L46.1 80.5 L43.9 78.0 L43.1 76.0 L43.3 75.2 L42.4 71.4 L41.2 69.3 L39.3 66.5 L38.5 65.7 L37.6 62.8 L35.7 60.0 L32.9 54.9 L31.5 51.0 L29.8 47.5 L28.4 44.6 L26.5 42.6 L24.4 38.4 L22.5 36.1 L16.9 32.8 L17.2 31.5 L18.3 31.2 L16.8 28.0 L16.6 26.4 L16.2 23.4 L18.8 20.2 L21.3 18.3 L21.6 18.7 L21.8 19.3 L21.9 20.1 L22.1 21.0 L21.7 21.3 L20.7 21.5 L20.4 22.3 L21.2 22.8 L20.5 24.0 L21.5 23.9 L22.3 23.2 L23.9 24.0 L25.0 24.1 L25.8 25.3 L26.7 26.7 L28.1 27.1 L28.6 26.4 L28.9 25.8 L29.9 24.9 L30.4 24.1 L30.2 23.4 L30.8 21.8 L31.2 21.1 L31.6 20.0 L32.0 18.5 L32.3 18.3 L32.7 18.8 L33.0 18.5 L32.9 18.1 L34.2 16.4 L36.5 15.4 L39.9 14.2 L42.7 12.5 L45.3 10.1 L47.0 8.1 L47.8 5.0 L48.2 5.1 L48.7 5.0 L48.6 3.0 L47.8 2.0 L47.0 0.9 L46.9 0.4 L48.2 0.5 L49.1 0.0 L50.0 0.6 L51.0 0.9 L51.4 1.4 L52.5 2.1 L53.2 2.9 L53.7 4.2 L54.1 5.1 L55.5 5.8 L56.5 6.4 L57.6 7.0 L58.2 8.2 L58.5 9.3 L59.6 9.5 L60.0 10.7 L59.9 11.8 L60.9 12.5 L61.9 12.9 L62.9 12.6 L64.1 13.0 L65.5 12.8 L66.6 12.3 L67.6 11.5 L69.0 12.2 L70.0 12.5 L71.5 12.0 L73.2 12.6 L74.2 13.2 L75.4 13.7 L76.5 14.3 L76.6 14.8 L74.8 17.7 L73.2 20.5 L74.7 20.8 L75.4 20.8 L76.1 21.9 L77.2 22.9Z","hx":39.0,"hy":65.6,"hub":"Lima"},"MX":{"d":"M0.0 18.0 L4.7 17.6 L7.7 17.9 L13.8 20.2 L21.2 22.3 L27.1 22.3 L29.4 21.1 L32.3 20.7 L35.2 20.7 L36.6 22.1 L40.0 24.8 L41.2 27.6 L42.9 29.3 L45.7 30.7 L46.9 29.9 L47.8 28.0 L49.3 27.7 L51.3 27.8 L52.1 28.4 L53.9 30.0 L55.3 32.5 L56.0 33.7 L58.1 35.9 L58.2 37.1 L58.2 37.8 L59.3 39.9 L61.0 40.6 L63.7 41.3 L65.1 41.9 L65.6 43.0 L63.9 49.5 L63.8 52.7 L63.7 54.9 L65.3 57.4 L64.9 57.8 L63.8 55.8 L64.7 57.9 L65.9 60.9 L68.7 65.4 L70.3 67.3 L70.8 67.8 L71.0 67.7 L74.4 69.6 L77.0 69.0 L80.2 68.4 L82.1 67.8 L83.0 68.2 L84.6 68.3 L84.9 67.3 L84.6 67.1 L86.9 65.4 L87.8 63.0 L87.9 60.3 L93.1 58.0 L95.3 57.4 L96.7 57.5 L98.6 57.7 L98.3 57.6 L98.8 57.2 L99.9 58.7 L99.0 60.8 L97.8 63.4 L97.0 64.4 L97.7 64.6 L97.4 65.1 L97.4 65.5 L96.8 67.9 L96.1 68.7 L95.7 67.2 L95.0 68.5 L93.5 70.0 L92.5 70.2 L90.2 70.9 L86.1 72.2 L85.0 73.1 L87.0 74.9 L87.8 75.8 L87.9 77.2 L84.6 77.2 L82.1 79.9 L82.3 81.0 L82.3 82.1 L81.0 81.6 L77.7 78.3 L75.1 76.6 L75.2 76.8 L74.6 76.8 L74.0 76.2 L73.4 75.9 L73.4 76.5 L71.4 77.5 L66.9 78.4 L60.5 75.5 L56.3 74.1 L52.6 72.4 L50.3 70.5 L47.5 70.0 L43.5 67.3 L40.1 65.5 L38.2 62.8 L38.2 61.3 L38.9 60.3 L38.7 59.7 L39.3 57.7 L37.8 54.7 L35.3 51.6 L30.8 47.0 L31.7 46.9 L30.7 46.7 L29.1 44.8 L29.9 44.9 L27.8 43.7 L26.7 43.4 L27.2 42.4 L26.0 42.9 L25.9 40.6 L26.1 40.2 L24.6 39.0 L23.7 37.8 L21.8 36.5 L21.7 34.8 L19.8 34.4 L17.4 32.0 L16.3 30.6 L15.6 29.2 L14.6 27.4 L13.4 24.7 L13.2 23.2 L13.0 22.7 L11.3 21.6 L10.0 21.7 L8.0 20.7 L7.7 21.2 L8.0 24.3 L8.5 27.0 L10.9 29.1 L12.4 30.9 L12.9 31.4 L14.0 33.0 L14.4 34.6 L16.3 37.2 L17.3 38.5 L17.6 39.0 L18.4 39.4 L19.1 41.0 L20.1 43.5 L21.1 46.3 L22.2 48.1 L22.4 47.7 L23.5 48.3 L24.6 49.9 L25.1 51.7 L23.5 52.6 L22.3 50.1 L18.8 47.5 L17.5 46.6 L16.5 44.9 L16.5 42.8 L14.7 40.3 L12.9 38.4 L11.1 38.3 L9.6 37.4 L8.5 36.3 L6.9 34.9 L9.3 34.8 L10.1 35.4 L9.5 34.6 L9.8 32.1 L7.0 29.3 L4.5 27.3 L3.7 25.6 L2.7 23.3 L1.5 21.5 L1.6 20.8 L0.2 18.7Z","hx":59.3,"hy":65.1,"hub":"Ciudad de M\u00e9xico"},"CO":{"d":"M59.8 3.4 L58.5 4.0 L55.6 5.0 L52.6 8.3 L51.3 10.2 L49.9 14.4 L48.9 17.3 L47.6 19.2 L48.5 19.4 L49.6 19.2 L50.6 19.8 L51.7 22.8 L53.3 24.9 L53.3 26.3 L52.9 28.0 L53.0 29.9 L54.4 30.4 L55.6 32.4 L58.0 32.4 L60.9 32.7 L63.2 32.1 L64.8 32.6 L66.5 32.9 L68.2 34.4 L71.0 37.8 L71.8 37.8 L73.1 37.5 L76.8 37.6 L80.5 36.9 L82.7 37.5 L82.8 39.0 L81.7 41.2 L80.7 43.0 L80.5 46.6 L80.8 48.3 L81.2 50.1 L82.3 52.2 L83.8 54.1 L83.5 54.7 L80.5 57.5 L81.6 57.8 L82.2 58.5 L83.2 59.2 L84.3 60.3 L84.6 61.7 L84.8 62.6 L85.7 64.5 L86.0 65.8 L86.4 67.3 L85.0 67.3 L84.9 64.4 L83.5 62.1 L82.6 62.0 L81.3 63.0 L80.0 64.1 L79.2 63.4 L78.3 62.8 L78.3 63.9 L77.0 64.3 L72.9 64.3 L70.8 64.0 L69.8 64.1 L68.5 64.3 L68.5 68.2 L69.4 68.3 L70.5 68.2 L71.2 68.3 L72.1 68.5 L72.7 69.4 L72.6 70.3 L72.7 70.7 L72.1 70.8 L71.7 70.7 L71.1 70.4 L70.3 70.4 L69.6 70.6 L68.8 70.9 L67.7 71.1 L67.3 73.5 L67.4 75.8 L69.2 77.3 L70.0 77.9 L70.1 78.7 L70.2 79.4 L70.4 80.1 L71.0 80.6 L71.0 81.1 L71.2 82.1 L70.6 85.2 L69.6 90.6 L68.5 96.6 L67.9 100.0 L66.6 98.9 L65.9 97.7 L65.1 97.7 L63.4 97.3 L65.1 94.3 L67.2 91.1 L67.1 90.5 L65.9 89.9 L64.6 89.3 L63.5 88.6 L61.5 87.9 L59.9 88.6 L58.7 88.3 L57.2 87.5 L56.1 88.3 L54.9 88.9 L53.3 89.1 L51.9 88.7 L50.8 89.0 L49.8 88.6 L48.7 87.8 L48.8 86.6 L48.4 85.3 L47.1 85.0 L46.7 83.8 L46.0 82.5 L44.9 81.9 L43.8 81.2 L42.3 80.4 L41.8 79.4 L41.2 78.1 L40.4 77.2 L39.2 76.4 L38.7 75.8 L37.7 75.5 L36.6 74.9 L35.0 74.8 L32.5 73.7 L31.3 72.5 L29.4 72.2 L29.2 73.0 L27.7 73.0 L27.2 73.1 L25.8 72.8 L24.0 72.4 L23.0 70.8 L22.2 70.5 L21.6 69.6 L18.7 68.8 L16.3 67.2 L14.8 66.0 L13.6 64.8 L16.3 64.0 L16.1 60.7 L17.0 59.8 L18.0 59.5 L19.6 59.3 L20.4 58.4 L20.9 58.1 L21.8 57.1 L22.0 56.3 L22.9 55.2 L23.8 53.7 L25.0 51.2 L24.2 51.2 L23.6 50.9 L23.4 49.4 L22.7 49.0 L23.6 48.2 L24.0 46.3 L23.6 44.1 L23.4 42.1 L24.3 39.9 L22.9 36.9 L23.6 35.6 L22.6 34.5 L21.7 32.8 L20.8 29.9 L21.2 28.6 L21.4 28.3 L22.1 29.2 L23.7 28.4 L24.1 27.2 L24.5 26.4 L23.5 24.5 L23.1 23.2 L23.7 22.8 L25.8 25.1 L26.6 26.1 L26.2 26.8 L27.1 27.0 L26.9 23.8 L26.4 22.9 L30.1 20.7 L32.3 18.0 L34.1 17.4 L33.9 15.6 L34.5 13.4 L33.5 13.7 L34.8 11.4 L36.3 9.9 L38.7 8.0 L41.6 8.8 L40.6 9.4 L41.6 9.7 L42.5 7.0 L44.2 6.7 L47.8 6.8 L54.0 3.3 L55.4 1.2 L56.2 0.8 L58.7 0.0 L60.9 2.3Z","hx":43.3,"hy":46.3,"hub":"Bogot\u00e1"},"CR":{"d":"M100.0 51.6 L99.8 52.2 L99.3 52.7 L98.6 53.4 L97.6 53.8 L95.2 52.5 L92.9 51.2 L91.6 51.8 L91.1 53.6 L90.3 54.5 L89.2 54.9 L88.7 55.5 L88.7 61.5 L88.7 67.3 L90.5 67.4 L93.4 69.4 L94.7 70.6 L95.1 71.7 L94.7 72.2 L92.6 73.4 L90.5 75.0 L89.4 77.0 L91.3 80.2 L91.6 82.3 L91.6 84.6 L91.1 85.7 L87.0 88.3 L86.1 89.2 L86.3 89.8 L88.5 91.6 L89.6 93.4 L90.4 95.5 L90.5 97.3 L88.5 93.9 L85.7 90.7 L83.2 88.7 L83.1 84.1 L82.1 81.6 L78.4 79.3 L75.3 77.7 L72.9 78.0 L74.3 80.6 L78.0 84.1 L78.3 85.4 L78.2 87.1 L75.7 86.8 L73.4 86.1 L70.7 85.9 L68.9 84.9 L65.0 80.8 L67.7 77.3 L68.6 75.0 L68.5 70.3 L67.9 68.0 L64.9 64.6 L60.2 60.7 L53.5 57.6 L50.4 55.1 L42.6 53.2 L39.7 51.9 L37.4 49.5 L37.0 47.8 L37.8 45.2 L35.7 41.8 L26.4 35.3 L21.2 32.8 L20.1 31.5 L19.3 31.0 L20.1 35.5 L22.4 38.3 L28.3 40.8 L29.9 42.3 L30.5 44.2 L27.1 47.9 L25.4 48.8 L24.9 50.8 L23.7 51.5 L22.5 50.3 L17.7 44.5 L8.5 41.8 L6.8 40.0 L3.3 34.8 L1.8 29.9 L2.3 26.7 L6.1 21.7 L7.3 19.5 L7.1 18.2 L7.2 16.2 L5.8 14.8 L2.2 13.0 L0.0 11.5 L0.6 10.9 L4.7 8.9 L4.9 7.1 L4.9 6.6 L5.6 6.5 L6.2 6.0 L6.5 5.5 L7.6 3.8 L8.6 2.9 L9.7 2.7 L11.0 3.4 L16.1 5.2 L21.8 7.3 L29.9 10.1 L33.2 8.3 L36.1 6.9 L38.1 7.1 L42.4 8.7 L45.1 9.2 L46.6 9.1 L49.4 11.5 L50.9 13.3 L51.2 14.5 L52.0 15.1 L54.2 15.2 L59.5 16.5 L62.7 16.2 L65.6 15.0 L67.3 13.4 L67.7 11.0 L68.5 12.2 L69.4 14.1 L69.8 16.5 L73.5 24.6 L76.6 29.2 L83.2 37.5 L86.1 39.0 L90.9 45.7 L92.6 46.8 L93.6 48.8 L98.6 50.4 L100.0 51.6Z","hx":54.7,"hy":40.9,"hub":"San Jos\u00e9"}};
+var AV = {"laura":{"bg":"#F6F7F8","color":"#B7ACE8","ink":"#0F0F0F","body":"M3 52 C1 28 11 13 27 13 C42 13 51 27 49 52Z","dots":"M13.9 33 a1.6 1.6 0 1 0 3.2 0 a1.6 1.6 0 1 0 -3.2 0ZM34.9 33 a1.6 1.6 0 1 0 3.2 0 a1.6 1.6 0 1 0 -3.2 0Z","lines":"M17 27 q2.5 -3 5 0 M28 27 q2.5 -3 5 0 M21 33 q4 4 8 0"},"daniela":{"bg":"#F6F7F8","color":"#FDDA24","ink":"#0F0F0F","body":"M24.0 12.0 A7 7 0 0 1 34.6 16.4 A7 7 0 0 1 39.0 27.0 A7 7 0 0 1 34.6 37.6 A7 7 0 0 1 24.0 42.0 A7 7 0 0 1 13.4 37.6 A7 7 0 0 1 9.0 27.0 A7 7 0 0 1 13.4 16.4 A7 7 0 0 1 24.0 12.0Z","dots":"","lines":"M18 24.5 l3.2 2 l-3.2 2 M30 24.5 l-3.2 2 l3.2 2 M21.5 32 q2.5 2.5 5 0"},"gerardo":{"bg":"#F6F7F8","color":"#00A7B5","ink":"#0F0F0F","body":"M9 52 V25 C9 19 13 16 18 16 H30 C35 16 39 19 39 25 V52Z M10.5 22 C6.5 17 6.5 11 8.5 7.5 C11 11.5 13.5 14 18 16.5Z M30 16.5 C34.5 14 37 11.5 39.5 7.5 C41.5 11 41.5 17 37.5 22Z","dots":"M17.7 29 a1.3 1.3 0 1 0 2.6 0 a1.3 1.3 0 1 0 -2.6 0ZM27.7 29 a1.3 1.3 0 1 0 2.6 0 a1.3 1.3 0 1 0 -2.6 0Z","lines":"M15 29 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0 M25 29 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0 M23 29 h2 M21 38 h6"},"nicolle":{"bg":"#F6F7F8","color":"#002E5D","ink":"#F6F7F8","body":"M6 52 V24 L10 13 L14.5 20 L18.5 9 L22.5 18 L26.5 7.5 L30 18 L34 10 L37.5 20 L42 13 V52Z","dots":"M17.2 31 a1.8 1.8 0 1 0 3.6 0 a1.8 1.8 0 1 0 -3.6 0ZM27.2 31 a1.8 1.8 0 1 0 3.6 0 a1.8 1.8 0 1 0 -3.6 0Z","lines":"M20 37 q4 3.5 8 0"},"adriana":{"bg":"#F6F7F8","color":"#0F0F0F","ink":"#F6F7F8","body":"M24 12 C28 12 29 17 31 21 C36 27 40 32 40 39 C40 48 33 53 24 53 C15 53 8 48 8 39 C8 32 12 27 17 21 C19 17 20 12 24 12Z M24 12 C25.5 6.5 31 4.5 34 5.5 C32 10 28 12 24 12Z","dots":"","lines":"M17.5 34 h4.5 M26 34 h4.5 M22 40 q2 1.8 4 0"},"fernanda":{"bg":"#F6F7F8","color":"#FDDA24","ink":"#0F0F0F","body":"M10 46 V24 C10 15 16 9 24 9 C32 9 38 15 38 24 V46 q-3.5 4 -7 0 q-3.5 4 -7 0 q-3.5 4 -7 0 q-3.5 4 -7 0Z","dots":"M17 24 a2 2 0 1 0 4 0 a2 2 0 1 0 -4 0ZM27 24 a2 2 0 1 0 4 0 a2 2 0 1 0 -4 0Z","lines":"M22 31 a2 2 0 1 0 4 0 a2 2 0 1 0 -4 0"},"juan":{"bg":"#F6F7F8","color":"#B7ACE8","ink":"#0F0F0F","body":"M12 54 L19 17 C20 10.5 25 7 30.5 8 C36 9 38.5 13.5 37.5 19 L33 54Z","dots":"","lines":"M23 20 q2 1.8 4 0 M30 20.5 q2 1.8 4 0 M25.5 27 q3 2.5 6 0"},"maria":{"bg":"#F6F7F8","color":"#00A7B5","ink":"#0F0F0F","body":"M15 15 H33 L45 52 H3Z","dots":"M17.4 27 a1.6 1.6 0 1 0 3.2 0 a1.6 1.6 0 1 0 -3.2 0ZM27.4 27 a1.6 1.6 0 1 0 3.2 0 a1.6 1.6 0 1 0 -3.2 0ZM15.99 32 a0.01 0.01 0 1 0 0.02 0 a0.01 0.01 0 1 0 -0.02 0Z","lines":"M20.5 33 q3.5 3 7 0 M15.5 31.5 h2 M30.5 31.5 h2"},"shaun":{"bg":"#002E5D","color":"#FDDA24","ink":"#0F0F0F","body":"M24.0 7.0 L29.6 19.3 L43.0 20.8 L33.0 29.9 L35.8 43.2 L24.0 36.5 L12.2 43.2 L15.0 29.9 L5.0 20.8 L18.4 19.3Z","dots":"M19.6 26 a1.4 1.4 0 1 0 2.8 0 a1.4 1.4 0 1 0 -2.8 0ZM25.6 26 a1.4 1.4 0 1 0 2.8 0 a1.4 1.4 0 1 0 -2.8 0Z","lines":"M22 30.5 q2 1.8 4 0"}};
+var P = {
+  laura: { name: 'Laura', shape: 'circle', color: '#B7ACE8', tagline: 'Co-President · Colombia Chapter Lead', chips: ['Co-President', 'Colombia Chapter Lead'], roles: ['Review-table owner for Colombia + Costa Rica', 'Active-project monitoring and closeout for those countries', 'Country-level responsibility for Costa Rica until a Chapter Lead is defined', 'Broader management responsibilities outside this workflow'] },
+  daniela: { name: 'Daniela', shape: 'triangle', color: '#FDDA24', tagline: 'Co-President · Product reviewer · Stellar handoff', chips: ['Co-President', 'Argentina Chapter Lead'], roles: ['Product reviewer for new Instawards', 'Consensus owner with Gerardo', 'Review-table owner for Argentina + Bolivia', 'Stellar handoff, Shaun communication, monthly cohort presentation'] },
+  gerardo: { name: 'Gerardo', shape: 'square', color: '#00A7B5', tagline: 'Technical reviewer · Mexico + Peru table', chips: ['Technical reviewer'], roles: ['Technical reviewer for new Instawards', 'Consensus reviewer with Daniela', 'Review-table owner for Mexico + Peru', 'Technical assessment during project monitoring'] },
+  nicolle: { name: 'Nicolle', shape: 'diamond', color: '#D6D2C4', tagline: 'Operational assistant · CO / MX / CR', chips: ['Operational assistant', 'CO / MX / CR'], roles: ['Tracks application readiness', 'Ensures Apex completeness', 'Runs weekly compliance checks', 'Follows up on missing information', 'Operational data follow-up for Costa Rica'] },
+  adriana: { name: 'Adriana', shape: 'hexagon', color: '#F6F7F8', tagline: 'Operational assistant · AR / BO / PE · Rubric owner', chips: ['Operational assistant', 'AR / BO / PE'], roles: ['Tracks application readiness', 'Ensures Apex completeness', 'Runs weekly compliance checks', 'Owns and maintains the review rubric, including feedback fields', 'Data continuity across her territories'] },
+  fernanda: { name: 'Fernanda', shape: 'ring', color: '#FDDA24', tagline: 'Mexico Chapter Lead · Mexico + Peru table', chips: ['Mexico Chapter Lead'], roles: ['Review-table partner for Mexico + Peru', 'Coordination support with Peru, Bolivia and the future Costa Rica owner'] },
+  juan: { name: 'Juan Sebastián', shape: 'cross', color: '#B7ACE8', tagline: 'Review-table partner · Argentina + Bolivia', chips: ['Review-table partner'], roles: ['Argentina + Bolivia table', 'Mid-sprint and final project reviews'] },
+  maria: { name: 'María Paula', shape: 'tridown', color: '#00A7B5', tagline: 'Review-table partner · Colombia + Costa Rica', chips: ['Review-table partner'], roles: ['Colombia + Costa Rica table', 'Mid-sprint and final project reviews'] },
+  shaun: { name: 'Shaun', shape: 'star', color: '#F6F7F8', tagline: 'Stellar · receives the monthly cohort', chips: ['Stellar'], roles: ['Receives the cohort in Apex and the Telegram notice', 'Monthly handoff meeting with Daniela in week 3', 'Stellar owns review and disbursement'] }
+};
+var ORDER = ['laura', 'daniela', 'gerardo', 'nicolle', 'adriana', 'fernanda', 'juan', 'maria', 'shaun'];
+var TABLE = ['gerardo', 'fernanda', 'daniela', 'juan', 'laura', 'maria'];
+var LEADS = ['laura', 'daniela', 'fernanda'];
+var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+function av1(id) {
+  var a = AV[id];
+  return { id: id, name: P[id].name, bg: a.bg, color: a.color, ink: a.ink, body: a.body, dots: a.dots, lines: a.lines };
+}
+function av(ids) { return ids.map(av1); }
+function tx(a) { return (a || []).map(function (t) { return { t: t }; }); }
+function r1(x) { var v = Math.round(x * 10) / 10; return String(v); }
+
+class Component extends DCLogic {
+  componentWillUnmount() { if (this.timer) { clearInterval(this.timer); this.timer = null; } }
+
+  renderVals() {
+    var self = this;
+    var st = this.state || {};
+    function g(k, d) { return st[k] === undefined ? d : st[k]; }
+    function set(o) { self.setState(o); }
+    var viewer = g('viewer', 'all');
+    var mo = g('mo', 0);
+    var momentId = g('moment', 'close');
+    var step = g('step', 0);
+    var first = g('first', 18), follow = g('follow', 0);
+    var k = g('k', 3);
+    var model = g('model', 'base');
+    var country = g('country', 'CO');
+    var isAll = viewer === 'all';
+    function inv(ids) { return isAll || ids.indexOf(viewer) >= 0; }
+
+    var now = new Date();
+    var base = new Date(now.getFullYear(), now.getMonth() + mo, 1);
+    var Y = base.getFullYear(), M = base.getMonth();
+    var N = new Date(Y, M + 1, 0).getDate();
+    var mon3 = MONTHS[M].slice(0, 3);
+    function fmt(d) { return mon3 + ' ' + d; }
+    var isCur = Y === now.getFullYear() && M === now.getMonth();
+    var today = isCur ? now.getDate() : -1;
+    var bd = []; var dd = 8;
+    while (bd.length < 5) { var wd = new Date(Y, M, dd).getDay(); if (wd !== 0 && wd !== 6) bd.push(dd); dd++; }
+
+    var appH = first * 0.5 + follow * 0.67;
+    var n = 2 * k;
+    var perCycle = model === 'base' ? 1.5 * n : 1.0 * n;
+    var tableMonth = 2 * perCycle;
+    var weekly = 1.5 * (3 * k / 9);
+    var H = {
+      daniela: appH + 3 + tableMonth + 3.5,
+      gerardo: appH + 3 + tableMonth,
+      laura: tableMonth, juan: tableMonth, fernanda: tableMonth, maria: tableMonth,
+      nicolle: 4 + 4 * weekly, adriana: 6 + 4 * weekly
+    };
+
+    var APPS = ['nicolle', 'adriana', 'laura', 'daniela', 'fernanda'];
+    var DG = ['daniela', 'gerardo'];
+    var W4 = N - 21;
+    var weeklyBul = ['Every active project updates progress in Apex', 'Nicolle: CO / MX / CR · Adriana: AR / BO / PE', 'Check updates, evidence, links, deliverable status and blockers; follow up on gaps', 'No deep technical or product review'];
+    var reviewBul = ['Daniela (product) and Gerardo (technical) review independently', 'Full application, SOW, rubric, 30-day feasibility, scope, deliverables and planned evidence', 'Written feedback and a Top 5 per country from each reviewer', 'Two business days is a deadline, not allocated time'];
+    var MOM = [
+      { id: 'apps', lane: 'sel', row: 'a', s: 1, sp: 7, label: 'Applications in Apex', people: APPS, chips: ['Chapter Leads'], hours: 'Intake and completeness checks', bul: ['All applications submitted through Stellar Apex', 'Nicolle and Adriana confirm every intended application is in, complete, with SOW information and enough evidence', 'Up to 3 selected Instawards per country per cohort'] },
+      { id: 'handoff', lane: 'sel', row: 'a', s: 15, sp: 7, label: 'Stellar handoff', people: ['daniela', 'shaun'], chips: [], hours: 'Deck 2 h · Meeting 1 h · Follow-up 30 min', bul: ['Daniela confirms staging and completeness in Apex, then notifies Shaun on Telegram', 'Standardized deck, organized by country', 'Monthly meeting with Shaun: present the cohort, answer questions, confirm next steps'] },
+      { id: 'disb', lane: 'sel', row: 'a', s: 22, sp: W4, label: 'Stellar disbursement', people: ['shaun'], chips: ['Stellar'], hours: 'Owned by Stellar', bul: ['Stellar owns review and disbursement', 'BAF is responsible for a complete handoff', 'The 30-day sprint starts once the Instaward is approved'] },
+      { id: 'close', lane: 'sel', row: 'b', s: 7, sp: 1, short: '7', label: 'Applications close', people: APPS, chips: ['Chapter Leads'], hours: 'Fixed deadline', bul: ['The 7th calendar day, even on weekends or holidays', 'Review starts the next business day'], kind: 'solid' },
+      { id: 'bd1', lane: 'sel', row: 'b', s: bd[0], sp: 1, short: '1', label: 'Application review · BD1', people: DG, chips: [], hours: r1(appH) + ' h per reviewer across BD1–2', bul: reviewBul, kind: 'mid' },
+      { id: 'bd2', lane: 'sel', row: 'b', s: bd[1], sp: 1, short: '2', label: 'Application review · BD2', people: DG, chips: [], hours: r1(appH) + ' h per reviewer across BD1–2', bul: reviewBul, kind: 'mid' },
+      { id: 'bd3', lane: 'sel', row: 'b', s: bd[2], sp: 1, short: '3', label: 'Selection and consensus · BD3', people: DG, chips: [], hours: 'Up to 3 h', bul: ['Compare Top 5s, scores, strengths, risks and open questions', 'About 30 minutes per country', 'Agree on 3 selected projects per country'], kind: 'mid' },
+      { id: 'bd4', lane: 'sel', row: 'b', s: bd[3], sp: 1, short: '4', label: 'Contingency hold · BD4', people: DG, chips: [], hours: '1 h provisional', bul: ['Only if consensus was not reached, information is missing, a second review is needed or a scoring gap remains', 'Release the block if it is not needed'], kind: 'dash' },
+      { id: 'bd5', lane: 'sel', row: 'b', s: bd[4], sp: 1, short: '5', label: 'Decision deadline · BD5', people: DG, chips: [], hours: 'All applications final in Apex', bul: ['Every application has a final internal status in Apex', 'Accepted: moved to the stage visible to Shaun / Stellar', 'Rejected: feedback through the rubric / platform'], kind: 'solid' },
+      { id: 'w1', lane: 'mon', row: 'a', s: 1, sp: 7, label: 'Weekly Apex check', people: ['nicolle', 'adriana'], chips: [], hours: r1(weekly) + ' h each this week', bul: weeklyBul },
+      { id: 'w2', lane: 'mon', row: 'a', s: 8, sp: 7, label: 'Weekly Apex check', people: ['nicolle', 'adriana'], chips: [], hours: r1(weekly) + ' h each this week', bul: weeklyBul },
+      { id: 'w3', lane: 'mon', row: 'a', s: 15, sp: 7, label: 'Weekly Apex check', people: ['nicolle', 'adriana'], chips: [], hours: r1(weekly) + ' h each this week', bul: weeklyBul },
+      { id: 'w4', lane: 'mon', row: 'a', s: 22, sp: W4, label: 'Weekly Apex check', people: ['nicolle', 'adriana'], chips: [], hours: r1(weekly) + ' h each this week', bul: weeklyBul },
+      { id: 'mid', lane: 'mon', row: 'b', s: 8, sp: 7, label: 'Mid-Sprint Review', people: TABLE, chips: [], hours: 'Up to ' + r1(perCycle) + ' h per reviewer', bul: ['Commitments vs actual progress, Weeks 1–2 outputs and evidence', 'Detect delays, blockers and scope deviation', 'Feedback and corrective actions for the second half', 'Three review tables, one per country pair'] },
+      { id: 'final', lane: 'mon', row: 'b', s: 22, sp: W4, label: 'Final Review and closeout', people: TABLE, chips: [], hours: 'Up to ' + r1(perCycle) + ' h per reviewer', bul: ['Final execution vs approved SOW', 'Each deliverable: evidence present, partial or missing', 'Final feedback documented, BAF-side closeout', 'Execution history ready for any follow-on'] }
+    ];
+    function whenOf(m) { return m.sp > 1 ? fmt(m.s) + '–' + (m.s + m.sp - 1) : fmt(m.s); }
+    var items = MOM.map(function (m) {
+      var on = inv(m.people);
+      var sel = m.id === momentId;
+      var bg, fg = '#F6F7F8', bt;
+      if (m.lane === 'mon') { bg = 'rgba(183,172,232,.16)'; bt = '2px solid #B7ACE8'; }
+      else { bg = 'rgba(253,218,36,.13)'; bt = '2px solid #FDDA24'; }
+      if (m.kind === 'solid') { bg = '#FDDA24'; fg = '#0F0F0F'; }
+      if (m.kind === 'mid') { bg = 'rgba(253,218,36,.32)'; }
+      if (m.kind === 'dash') { bg = 'transparent'; bt = '2px dashed #D6D2C4'; fg = '#D6D2C4'; }
+      return {
+        id: m.id, lane: m.lane, row: m.row,
+        col: m.s + ' / span ' + m.sp,
+        text: m.sp > 1 ? m.label : m.short,
+        av: m.sp > 1 ? av(m.people) : [],
+        op: on ? 1 : 0.18, bg: bg, fg: fg, bt: bt,
+        ol: sel ? '2px solid #F6F7F8' : 'none',
+        aria: m.label + ', ' + whenOf(m),
+        pick: function () { set({ moment: m.id }); }
+      };
+    });
+    function lane(l, r) { return items.filter(function (x) { return x.lane === l && x.row === r; }); }
+    var cur = MOM.filter(function (m) { return m.id === momentId; })[0] || MOM[3];
+    var detail = {
+      label: cur.label, when: whenOf(cur) + ', ' + Y,
+      lane: cur.lane === 'mon' ? 'Monitoring · active cohort' : 'Selection · next cohort',
+      color: cur.lane === 'mon' ? '#B7ACE8' : '#FDDA24',
+      people: av(cur.people), chips: tx(cur.chips), hours: cur.hours, bul: tx(cur.bul)
+    };
+
+    var WD = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+    var dayHeads = [];
+    for (var d = 1; d <= N; d++) {
+      var w = new Date(Y, M, d).getDay();
+      var we = w === 0 || w === 6;
+      var t = d === today;
+      dayHeads.push({ n: d, wd: WD[w], bg: t ? '#FDDA24' : (we ? 'rgba(246,247,248,.05)' : 'transparent'), fg: t ? '#0F0F0F' : (we ? 'rgba(246,247,248,.45)' : 'rgba(246,247,248,.85)'), fw: t ? 700 : 400 });
+    }
+    var weekBands = [
+      { col: '1 / span 7', label: 'Week 1 · ' + mon3 + ' 1–7' },
+      { col: '8 / span 7', label: 'Week 2 · 8–14' },
+      { col: '15 / span 7', label: 'Week 3 · 15–21' },
+      { col: '22 / span ' + W4, label: 'Week 4 · 22–' + N }
+    ];
+    var nowText = '';
+    if (isCur) {
+      var td = today, bi = bd.indexOf(td);
+      if (td < 7) nowText = 'Week 1: applications are open, ' + (7 - td) + (7 - td === 1 ? ' day' : ' days') + ' to the deadline. The active cohort is in its sprint.';
+      else if (td === 7) nowText = 'Deadline day: applications close today.';
+      else if (bi >= 0) nowText = 'Business day ' + (bi + 1) + ' of the review. Week 2 also brings the Mid-Sprint Review.';
+      else if (td <= 14) nowText = 'Week 2: review and selection, plus the Mid-Sprint Review for active projects.';
+      else if (td <= 21) nowText = 'Week 3: Stellar handoff with Shaun.';
+      else nowText = 'Week 4: Stellar disbursement and the Final Review.';
+    } else {
+      nowText = 'Planning view for ' + MONTHS[M] + ' ' + Y + '. The 7th falls on a ' + ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][new Date(Y, M, 7).getDay()] + '.';
+    }
+    var todayTag = isCur ? 'Today · ' + fmt(today) : MONTHS[M] + ' ' + Y;
+
+    var viewBtns = [{ id: 'all', label: 'Everyone', hasAv: false, av: av1('laura') }].concat(ORDER.map(function (id) { return { id: id, label: P[id].name, hasAv: true, av: av1(id) }; })).map(function (b) {
+      var on = b.id === viewer;
+      return { label: b.label, hasAv: b.hasAv, av: b.av, bc: on ? '#FDDA24' : 'transparent', op: isAll || on ? 1 : 0.55, pressed: on ? 'true' : 'false', pick: function () { set({ viewer: b.id }); } };
+    });
+    var legend = ORDER.map(function (id) { return { name: P[id].name, tagline: P[id].tagline, av: av1(id), pick: function () { set({ viewer: id }); } }; });
+
+    var me = { av: av1('laura'), name: '', chips: [], roles: [], hoursText: '', moments: [] };
+    if (!isAll) {
+      var seen = {};
+      me = {
+        av: av1(viewer), name: P[viewer].name, chips: tx(P[viewer].chips), roles: tx(P[viewer].roles),
+        hoursText: H[viewer] !== undefined ? '≈ ' + r1(H[viewer]) + ' h' : 'Stellar side',
+        moments: MOM.filter(function (m) { if (m.people.indexOf(viewer) < 0 || seen[m.label]) return false; seen[m.label] = 1; return true; })
+          .map(function (m) { return { label: m.label, when: m.id.charAt(0) === 'w' && m.id.length === 2 ? 'Every week' : whenOf(m), pick: function () { set({ moment: m.id }); } }; })
+      };
+    }
+
+    var JS = [
+      { t: 'Cohort opens', x: 'Teams submit applications and SOW information in Stellar Apex.', p: ['laura', 'daniela', 'fernanda'], c: ['Chapter Leads', 'Project teams'], ph: 'sel' },
+      { t: 'Completeness check', x: 'Nicolle and Adriana make sure every intended application is in Apex, complete and ready for review.', p: ['nicolle', 'adriana'], c: [], ph: 'sel' },
+      { t: 'The 7th: applications close', x: 'Fixed calendar deadline. Review starts the next business day.', p: [], c: ['Everyone'], ph: 'sel' },
+      { t: 'Independent review', x: 'Daniela and Gerardo each apply the rubric, leave feedback and build a Top 5 per country.', p: DG, c: [], ph: 'sel' },
+      { t: 'Consensus', x: 'They compare reviews and agree on 3 selected projects per country.', p: DG, c: [], ph: 'sel' },
+      { t: 'Decision in Apex', x: 'Accepted projects move to the stage visible to Shaun / Stellar. Rejected projects receive feedback.', p: DG, c: [], ph: 'sel' },
+      { t: 'Handoff to Stellar', x: 'Daniela notifies Shaun on Telegram, prepares the deck and leads the week 3 meeting.', p: ['daniela', 'shaun'], c: [], ph: 'sel' },
+      { t: 'Stellar disbursement', x: 'Stellar reviews and disburses. BAF does not own this step.', p: ['shaun'], c: ['Stellar'], ph: 'sel' },
+      { t: '30-day sprint begins', x: 'A dedicated Telegram group opens for the project. Apex remains the system of record.', p: [], c: ['Project team'], ph: 'mon' },
+      { t: 'Weekly updates and checks', x: 'The team updates Apex every week. Nicolle and Adriana check updates, evidence and links.', p: ['nicolle', 'adriana'], c: ['Project team'], ph: 'mon' },
+      { t: 'Mid-Sprint Review · week 2', x: 'The review table compares commitments against progress and agrees on corrective actions.', p: TABLE, c: [], ph: 'mon' },
+      { t: 'Corrective actions', x: 'Weekly updates continue while the team executes the second half of the sprint.', p: ['nicolle', 'adriana'], c: ['Project team'], ph: 'mon' },
+      { t: 'Final Review · week 4', x: 'Final execution against the SOW. Each deliverable is marked present, partial or missing.', p: TABLE, c: [], ph: 'mon' },
+      { t: 'BAF closeout', x: 'Final feedback documented, project closed from the BAF side and ready to report back to Stellar.', p: TABLE, c: [], ph: 'mon' },
+      { t: 'History for a follow-on', x: 'The execution record is reusable if the team applies for a follow-on Instaward. Next monthly cycle.', p: [], c: ['Next cycle'], ph: 'mon' }
+    ];
+    var jTotal = JS.length;
+    var jDots = JS.map(function (s, i) {
+      var done = i < step, curS = i === step;
+      var col = s.ph === 'mon' ? '#B7ACE8' : '#FDDA24';
+      var mine = isAll || s.p.indexOf(viewer) >= 0;
+      return { n: i + 1, bg: curS || done ? col : 'transparent', fg: curS || done ? '#0F0F0F' : col, bd: '1px solid ' + col, sc: curS ? 1.25 : (mine ? 1 : 0.8), line: i < jTotal - 1, lc: done ? col : 'rgba(246,247,248,.2)', aria: 'Step ' + (i + 1) + ': ' + s.t, pick: function () { self.stopPlay(); set({ step: i }); } };
+    });
+    var js = JS[step];
+    var jCur = { n: step + 1, title: js.t, text: js.x, people: av(js.p), chips: tx(js.c), phase: js.ph === 'mon' ? 'Monitoring' : 'Selection', color: js.ph === 'mon' ? '#B7ACE8' : '#FDDA24' };
+    this.stopPlay = function () { if (self.timer) { clearInterval(self.timer); self.timer = null; } };
+
+    var C = [
+      { code: 'AR', name: 'Argentina', lead: 'daniela', leadName: 'Daniela', asst: 'adriana', table: 'Argentina + Bolivia', tbl: ['daniela', 'juan'] },
+      { code: 'BO', name: 'Bolivia', lead: null, leadName: 'Emilia', asst: 'adriana', table: 'Argentina + Bolivia', tbl: ['daniela', 'juan'], note: 'When Fernanda meets with Emilia, Adriana joins and keeps data continuity in Apex.' },
+      { code: 'PE', name: 'Peru', lead: null, leadName: 'Eduardo', asst: 'adriana', table: 'Mexico + Peru', tbl: ['gerardo', 'fernanda'], note: 'When Fernanda meets with Eduardo, Adriana joins and keeps data continuity in Apex.' },
+      { code: 'MX', name: 'Mexico', lead: 'fernanda', leadName: 'Fernanda', asst: 'nicolle', table: 'Mexico + Peru', tbl: ['gerardo', 'fernanda'] },
+      { code: 'CO', name: 'Colombia', lead: 'laura', leadName: 'Laura', asst: 'nicolle', table: 'Colombia + Costa Rica', tbl: ['laura', 'maria'] },
+      { code: 'CR', name: 'Costa Rica', lead: null, leadName: 'TBD', asst: 'nicolle', table: 'Colombia + Costa Rica', tbl: ['laura', 'maria'], open: true, note: 'No formal Chapter Lead yet. Nicolle covers operational data follow-up and Laura keeps country-level responsibility. When Fernanda meets the future owner, Nicolle joins.' }
+    ];
+    function cPeople(c) { var a = [c.asst].concat(c.tbl); if (c.lead) a.push(c.lead); if (c.code === 'CR') a.push('laura'); return a; }
+    var countries = C.map(function (c) {
+      var sel = c.code === country, on = inv(cPeople(c)), gg = GEO[c.code];
+      var ids = []; [c.lead, c.asst].concat(c.tbl).forEach(function (x) { if (x && ids.indexOf(x) < 0) ids.push(x); });
+      return { name: c.name, d: gg.d, hx: gg.hx, hy: gg.hy, pid: 'dots-' + c.code, fillUrl: 'url(#dots-' + c.code + ')', dot: sel ? '#FDDA24' : 'rgba(253,218,36,.55)', stroke: sel ? 'rgba(253,218,36,.5)' : 'none', sel: sel, bc: sel ? '#FDDA24' : 'rgba(246,247,248,.13)', op: on ? 1 : 0.3, pressed: sel ? 'true' : 'false', pulseOp: sel ? 1 : 0, av: av(ids), pick: function () { set({ country: c.code }); } };
+    });
+    var cs = C.filter(function (c) { return c.code === country; })[0];
+    var cSel = { name: cs.name, hub: GEO[cs.code].hub, leadAv: cs.lead ? av([cs.lead]) : [], leadName: cs.leadName, open: !!cs.open, notOpen: !cs.open, asst: av1(cs.asst), table: cs.table, tbl: av(cs.tbl), hasNote: !!cs.note, note: cs.note || '' };
+
+    var tables = [
+      { name: 'Mexico + Peru', ids: ['gerardo', 'fernanda'] },
+      { name: 'Argentina + Bolivia', ids: ['daniela', 'juan'] },
+      { name: 'Colombia + Costa Rica', ids: ['laura', 'maria'] }
+    ].map(function (t) { return { name: t.name, av: av(t.ids), op: inv(t.ids) ? 1 : 0.3 }; });
+
+    var DAYEV = {};
+    function addEv(day, e) { (DAYEV[day] = DAYEV[day] || []).push(e); }
+    addEv(7, { label: 'Applications close', hours: 'Fixed deadline', ids: APPS, h: 0, kind: 'solid' });
+    addEv(bd[0], { label: 'Application review', hours: r1(appH) + ' h across BD1–2', ids: DG, h: appH, kind: 'mid' });
+    addEv(bd[1], { label: 'Application review', hours: 'continues', ids: DG, h: 0, kind: 'mid' });
+    addEv(bd[2], { label: 'Selection and consensus', hours: 'Up to 3 h', ids: DG, h: 3, kind: 'mid' });
+    addEv(bd[3], { label: 'Contingency hold', hours: '1 h, release if unused', ids: DG, h: 1, kind: 'dash' });
+    addEv(bd[4], { label: 'Decision deadline', hours: 'Final status in Apex', ids: DG, h: 0, kind: 'solid' });
+    var off = (new Date(Y, M, 1).getDay() + 6) % 7;
+    var cells = [];
+    var total = 0;
+    for (var i = 0; i < off; i++) cells.push({ n: '', ev: [], bg: 'transparent', bt: 'none', op: 1, fw: 400, nc: '#F6F7F8' });
+    for (var d2 = 1; d2 <= N; d2++) {
+      var w2 = new Date(Y, M, d2).getDay(), we2 = w2 === 0 || w2 === 6;
+      var evs = (DAYEV[d2] || []).filter(function (e) { return inv(e.ids); }).map(function (e) {
+        if (!isAll) total += e.h;
+        var sty = e.kind === 'solid' ? { bg: '#FDDA24', fg: '#0F0F0F', bd: '0' } : e.kind === 'dash' ? { bg: 'transparent', fg: '#D6D2C4', bd: '1px dashed #D6D2C4' } : { bg: 'rgba(253,218,36,.22)', fg: '#F6F7F8', bd: '0' };
+        return { label: e.label, hours: e.hours, av: av(e.ids), bg: sty.bg, fg: sty.fg, bd: sty.bd };
+      });
+      var isT = d2 === today;
+      cells.push({ n: d2, ev: evs, bg: we2 ? 'rgba(246,247,248,.02)' : 'rgba(246,247,248,.05)', bt: isT ? '2px solid #FDDA24' : (d2 === 7 ? '2px solid rgba(253,218,36,.5)' : '2px solid transparent'), op: 1, fw: isT ? 700 : 400, nc: isT ? '#FDDA24' : (we2 ? 'rgba(246,247,248,.45)' : '#F6F7F8') });
+    }
+    while (cells.length % 7) cells.push({ n: '', ev: [], bg: 'transparent', bt: 'none', op: 1, fw: 400, nc: '#F6F7F8' });
+
+    var FLEX = [
+      { week: 'Every week · Weeks 1–4', label: 'Apex Compliance Check · CO / MX / CR', ids: ['nicolle'], h: 4 * weekly, hours: r1(weekly) + ' h × 4' },
+      { week: 'Every week · Weeks 1–4', label: 'Apex Compliance Check · AR / BO / PE', ids: ['adriana'], h: 4 * weekly, hours: r1(weekly) + ' h × 4' },
+      { week: 'Week 2 · ' + mon3 + ' 8–14', label: 'Mid-Sprint Review (pre-review + project meetings)', ids: TABLE, h: perCycle, hours: 'Up to ' + r1(perCycle) + ' h' },
+      { week: 'Week 3 · ' + mon3 + ' 15–21', label: 'Monthly Instawards deck preparation', ids: ['daniela'], h: 2, hours: '2 h' },
+      { week: 'Week 3 · ' + mon3 + ' 15–21', label: 'Monthly Stellar handoff meeting', ids: ['daniela', 'shaun'], h: 1, hours: '1 h' },
+      { week: 'Week 3 · ' + mon3 + ' 15–21', label: 'Post-meeting follow-up and status confirmation', ids: ['daniela'], h: 0.5, hours: '30 min' },
+      { week: 'Week 4 · ' + mon3 + ' 22–' + N, label: 'Final Review (pre-review + project meetings)', ids: TABLE, h: perCycle, hours: 'Up to ' + r1(perCycle) + ' h' }
+    ];
+    var flex = FLEX.filter(function (f) { return inv(f.ids); }).map(function (f) { if (!isAll) total += f.h; return { week: f.week, label: f.label, hours: f.hours, av: av(f.ids) }; });
+
+    var bars = ORDER.filter(function (id) { return H[id] !== undefined; }).map(function (id) { return { id: id, h: H[id] }; }).sort(function (a, b) { return b.h - a.h; });
+    var maxH = Math.max.apply(null, bars.map(function (b) { return b.h; }).concat([1]));
+    var NOTE = { daniela: 'App review + consensus + AR / BO table + Stellar handoff', gerardo: 'Technical app review + consensus + MX / PE table', laura: 'CO / CR review table', juan: 'AR / BO review table', fernanda: 'MX / PE review table', maria: 'CO / CR review table', nicolle: 'Intake, completeness, weekly checks CO / MX / CR', adriana: 'Intake, completeness, weekly checks AR / BO / PE, rubric' };
+    bars = bars.map(function (b) { var asst = b.id === 'nicolle' || b.id === 'adriana'; return { name: P[b.id].name, av: av1(b.id), h: r1(b.h), w: Math.max(2, Math.round(b.h / maxH * 100)), color: asst ? '#B7ACE8' : '#FDDA24', note: NOTE[b.id], op: isAll || viewer === b.id ? 1 : 0.3 }; });
+
+    function mBtn(on) { return { bg: on ? '#FDDA24' : 'transparent', fg: on ? '#0F0F0F' : '#F6F7F8', bc: on ? '#FDDA24' : 'rgba(246,247,248,.35)', pressed: on ? 'true' : 'false' }; }
+    function clamp(x, lo, hi) { return Math.max(lo, Math.min(hi, x)); }
+
+    var DN = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    var rounds = [0, 1, 2, 3].map(function (o) {
+      var b2 = new Date(now.getFullYear(), now.getMonth() + o, 1);
+      var y2 = b2.getFullYear(), m2 = b2.getMonth(), n2 = new Date(y2, m2 + 1, 0).getDate(), s3 = MONTHS[m2].slice(0, 3);
+      var b = [], x = 8;
+      while (b.length < 5) { var w5 = new Date(y2, m2, x).getDay(); if (w5 !== 0 && w5 !== 6) b.push(x); x++; }
+      function f(d) { return DN[new Date(y2, m2, d).getDay()] + ' ' + s3 + ' ' + d; }
+      var on = o === mo;
+      var Y8 = '#F6F7F8', L8 = '#B7ACE8';
+      return {
+        month: MONTHS[m2] + ' ' + y2, tag: o === 0 ? 'Current' : 'Cohort +' + o, close: f(7),
+        bg: on ? 'rgba(253,218,36,.06)' : 'transparent', bc: on ? '#FDDA24' : 'rgba(246,247,248,.13)', pressed: on ? 'true' : 'false',
+        rows: [
+          { k: 'Review · BD1–2', v: f(b[0]) + ' – ' + f(b[1]), c: Y8 },
+          { k: 'Consensus · BD3', v: f(b[2]), c: Y8 },
+          { k: 'Contingency · BD4', v: f(b[3]), c: Y8 },
+          { k: 'Decision · BD5', v: f(b[4]), c: '#FDDA24' },
+          { k: 'Mid-Sprint Review', v: 'Week 2 · ' + s3 + ' 8–14', c: L8 },
+          { k: 'Stellar handoff', v: 'Week 3 · ' + s3 + ' 15–21', c: Y8 },
+          { k: 'Disbursement', v: 'Week 4 · ' + s3 + ' 22–' + n2, c: Y8 },
+          { k: 'Final Review', v: 'Week 4 · ' + s3 + ' 22–' + n2, c: L8 }
+        ],
+        pick: function () { set({ mo: o }); }
+      };
+    });
+
+    return {
+      rounds: rounds,
+      isAll: isAll, notAll: !isAll, me: me, legend: legend, viewBtns: viewBtns,
+      clearViewer: function () { set({ viewer: 'all' }); },
+      monthName: MONTHS[M] + ' ' + Y, days: N, dayHeads: dayHeads, weekBands: weekBands,
+      selA: lane('sel', 'a'), selB: lane('sel', 'b'), monA: lane('mon', 'a'), monB: lane('mon', 'b'),
+      detail: detail, nowText: nowText, todayTag: todayTag,
+      prevMonth: function () { set({ mo: mo - 1 }); }, nextMonth: function () { set({ mo: mo + 1 }); },
+      jDots: jDots, jCur: jCur, jTotal: jTotal,
+      jBack: function () { self.stopPlay(); set({ step: Math.max(0, step - 1), playing: false }); },
+      jNext: function () { self.stopPlay(); set({ step: Math.min(jTotal - 1, step + 1), playing: false }); },
+      jPlayLabel: st.playing ? 'Pause' : (step === jTotal - 1 ? 'Replay' : 'Play'),
+      jPlay: function () {
+        if (self.timer) { self.stopPlay(); set({ playing: false }); return; }
+        var startAt = step === jTotal - 1 ? 0 : step;
+        set({ step: startAt, playing: true });
+        self.timer = setInterval(function () {
+          var s = (self.state && self.state.step) || 0;
+          if (s >= jTotal - 1) { clearInterval(self.timer); self.timer = null; self.setState({ playing: false }); return; }
+          self.setState({ step: s + 1 });
+        }, 2400);
+      },
+      bdRange: fmt(bd[0]) + ' to ' + fmt(bd[4]), bd12: fmt(bd[0]) + '–' + bd[1], bd3: fmt(bd[2]), bd4: fmt(bd[3]), bd5: fmt(bd[4]),
+      dgOp: inv(DG) ? 1 : 0.35,
+      first: first, follow: follow, totalApps: first + follow, appH: r1(appH),
+      incFirst: function () { set({ first: clamp(first + 1, 0, 60) }); }, decFirst: function () { set({ first: clamp(first - 1, 0, 60) }); },
+      incFollow: function () { set({ follow: clamp(follow + 1, 0, 60) }); }, decFollow: function () { set({ follow: clamp(follow - 1, 0, 60) }); },
+      countries: countries, cSel: cSel, tables: tables, perTable: n,
+      calTitle: isAll ? 'Everyone’s month' : P[viewer].name + '’s month',
+      calSub: isAll ? 'Day-specific blocks for the whole team. Pick a person in the bar above to see only their blocks and total hours. Holidays are not included.' : 'The blocks ' + P[viewer].name + ' should reserve in ' + MONTHS[M] + '. Holidays are not included; the 7th never moves.',
+      calCells: cells, calTotal: r1(total) + ' h', flex: flex, flexEmpty: flex.length === 0,
+      k: k, incK: function () { set({ k: clamp(k + 1, 0, 3) }); }, decK: function () { set({ k: clamp(k - 1, 0, 3) }); },
+      mBase: mBtn(model === 'base'), mOpt: mBtn(model !== 'base'),
+      setBase: function () { set({ model: 'base' }); }, setOpt: function () { set({ model: 'opt' }); },
+      modelNote: model === 'base' ? 'Baseline: 1.5 h per project per checkpoint for each table reviewer.' : 'Primary / Secondary: about 1 h per project per checkpoint per person (45 or 15 min review + 30 min call). Optional, not yet adopted.',
+      bars: bars
+    };
+  }
+}
+(function () {
+  var tpl = document.getElementById('tpl').content;
+  var app = document.getElementById('app');
+  var comp = new Component();
+  window.__comp = comp;
+  function lookup(path, sc) {
+    path = path.trim();
+    if (path === 'true') return true; if (path === 'false') return false;
+    if (/^-?\d+(\.\d+)?$/.test(path)) return Number(path);
+    var parts = path.split('.'), v = sc;
+    for (var i = 0; i < parts.length; i++) { if (v == null) return undefined; v = v[parts[i]]; }
+    return v;
+  }
+  var ONE = /^\{\{\s*([^}]+?)\s*\}\}$/, ANY = /\{\{\s*([^}]+?)\s*\}\}/g;
+  function interp(str, sc) { return str.replace(ANY, function (_, p) { var v = lookup(p, sc); return v == null ? '' : String(v); }); }
+  function build(node, sc, out) {
+    if (node.nodeType === 3) { out.appendChild(document.createTextNode(interp(node.nodeValue, sc))); return; }
+    if (node.nodeType !== 1) return;
+    var tag = node.localName;
+    if (tag === 'sc-for') {
+      var list = lookup(ONE.exec(node.getAttribute('list'))[1], sc) || [];
+      var as = node.getAttribute('as') || 'item';
+      list.forEach(function (it, i) { var s2 = Object.create(sc); s2[as] = it; s2.$index = i; kids(node, s2, out); });
+      return;
+    }
+    if (tag === 'sc-if') { if (lookup(ONE.exec(node.getAttribute('value'))[1], sc)) kids(node, sc, out); return; }
+    var el = document.createElementNS(node.namespaceURI, node.localName);
+    for (var i = 0; i < node.attributes.length; i++) {
+      var a = node.attributes[i], n = a.name, val = a.value;
+      if (n.indexOf('hint-') === 0) continue;
+      if (/^on[a-z]+$/i.test(n)) { var m = ONE.exec(val); var fn = m ? lookup(m[1], sc) : null; if (typeof fn === 'function') el.addEventListener(n.slice(2).toLowerCase(), fn); continue; }
+      el.setAttribute(n, interp(val, sc));
+    }
+    kids(node, sc, el);
+    out.appendChild(el);
+  }
+  function kids(node, sc, out) { for (var c = node.firstChild; c; c = c.nextSibling) build(c, sc, out); }
+  var pending = false;
+  window.render = function () {
+    if (pending) return; pending = true;
+    Promise.resolve().then(function () {
+      pending = false;
+      var openIdx = [].map.call(app.querySelectorAll('details'), function (d) { return d.open; });
+      var focusables = [].slice.call(app.querySelectorAll('button, a, summary'));
+      var fi = focusables.indexOf(document.activeElement);
+      var vals = comp.renderVals();
+      var frag = document.createDocumentFragment();
+      kids(tpl, vals, frag);
+      app.replaceChildren(frag);
+      [].forEach.call(app.querySelectorAll('details'), function (d, i) { if (openIdx[i]) d.open = true; });
+      if (fi >= 0) { var f2 = app.querySelectorAll('button, a, summary')[fi]; if (f2) f2.focus({ preventScroll: true }); }
+    });
+  };
+  render();
+})();
+</script>
+</body>
+</html>
